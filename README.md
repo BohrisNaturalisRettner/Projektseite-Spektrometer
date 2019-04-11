@@ -5,32 +5,34 @@ Klasse 12e
 Schuljahr 2018/19                                                                                                                      
                                                                                                                                       
                                                                                                                                        
-## Inhalt 
+# Inhalt 
 
-### [1. Das Spektrometer](#1)
+## [1. Das Spektrometer](#1)
 
-### [2. Der Aufbau](#2)
+## [2. Der Aufbau](#2)
 <details>
   <summary>Komponenten</summary>
   
-#### [Arduino](#2a)
+### [Arduino](#2a)
  </details> <hr>
 
-### [3. Die Funktionsweise](#3)
+## [3. Die Funktionsweise](#3)
 <details> 
   <summary>Beispielversuch</summary>
   
-#### [Versuchsvorbereitung](#3a)                                                                                          
-#### [Versuchsdurchführung](#3b)
-#### [Versuchsnachbereitung / Resultat](#3c)
+### [Versuchsvorbereitung](#3a)                                                                                          
+### [Versuchsdurchführung](#3b)
+### [Versuchsnachbereitung / Resultat](#3c)
  </details> <hr>
 
 
-## 1. Das Spektometer<a name="1"></a>
+# 1. Das Spektrometer<a name="1"></a>
 
-## 2. Der Aufbau<a name="2"></a>
+# 2. Der Aufbau<a name="2"></a>
 
-## 3. Die Funktionsweise<a name="3"></a>
+## *Die Komponenten
+
+# 3. Die Funktionsweise<a name="3"></a>
 
 
 ## Funktionsweise

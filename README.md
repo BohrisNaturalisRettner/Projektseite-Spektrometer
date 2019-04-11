@@ -11,7 +11,7 @@ Schuljahr 2018/19
 
 ### [2. Aufbau](#2)
 <details>
-  <summary> <h2>Komponenten</h2> </summary>
+  <summary>Komponenten</summary>
   
 #### [Arduino](#a)
  </details> <hr>

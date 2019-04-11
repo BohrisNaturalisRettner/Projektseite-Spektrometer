@@ -30,7 +30,7 @@ Schuljahr 2018/19
 
 # 2. Der Aufbau<a name="2"></a>
 
-## * Die Komponenten
+* <h2>Die Komponenten</h2>
 
 # 3. Die Funktionsweise<a name="3"></a>
 

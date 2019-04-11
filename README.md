@@ -10,7 +10,7 @@ Schuljahr 2018/19
 ### - [1. Das Spektrometer](#1)
 ### - [2. Aufbau](#2)
 <details>
-  <summary>Komponenten</summary>
+  <summary> ### [3. Komponenten](#3)</summary>
   
 ### [Arduino](#a)
  </details> <hr>

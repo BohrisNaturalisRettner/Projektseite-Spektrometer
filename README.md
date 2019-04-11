@@ -32,7 +32,7 @@ Schuljahr 2018/19
 
 * <h2>Die Komponenten</h2>
   
-  + <h3>Arduino</h3>
+  + <h3>Arduino</h3><a name="2a"></a>
 
 # 3. Die Funktionsweise<a name="3"></a>
 

@@ -1,5 +1,5 @@
 # Projektseite Spektrometer
-von Tim Wähner und David Rettmann 
+von Tim Wähner und David Rettmann                                                                                              
 Stormarnschule Ahrensburg
 Klasse 12e 
 Schuljahr 2018/19

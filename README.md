@@ -8,13 +8,30 @@ Schuljahr 2018/19
 # Inhalt 
 
 ## [1. Das Spektrometer](#1)
+<details>
+  <summary>Genauer</summary>
+  
+### [Was ist ein optisches Spektrometer?](#1a)
+
+### [Warum haben wir uns für ein optisches Spektrum als Projekt entschieden?](#1b)
+
+## [2. Der Arduino](#4)
+<details>
+  <summary>Genauer</summary>
+  
+</details> <hr>
 
 ## [2. Der Aufbau](#2)
 <details>
-  <summary>Komponenten</summary>
+  <summary>Genauer</summary>
   
-### [Arduino](#2a)
- </details> <hr>
+### [Anschalten](#2a)
+### [Bewegung](#2b)
+### [Licht](#2c)
+### [Lichtmessung](#2d)
+### [Anzeige](#2e)
+
+</details> <hr>
 
 ## [3. Die Funktionsweise](#3)
 <details> 
@@ -28,11 +45,36 @@ Schuljahr 2018/19
 
 # 1. Das Spektrometer<a name="1"></a>
 
+## Was ist ein optisches Spektrum?<a name="1a"></a>
+
+## Warum haben wir uns für ein optisches Spektrum als Projekt entschieden?<a name="1b"></a>
+
 # 2. Der Aufbau<a name="2"></a>
 
-* <h2>Die Komponenten</h2>
   
-  + <h3>Arduino</h3><a name="2a"></a>
+  Anschalten
+  - Schalter (5V)
+  - blaues Licht zur Bestätigung (5V)Analog 1
+  
+  Bewegung 
+  - Motor mit Aufhängung und Stromversorgung
+  - Motorboard Steuerung
+  - Dreharm mit Zange 
+  - Rad, Stopper 
+  -> Code
+  
+  Licht
+  - Laser (3,3V an Arduino) mit Holzplattenhalterung (Winkel) 
+  - Gitter über Drehpunkt (Tisch mit Winkel)
+  
+  LIcht aufnehmen
+  - Photosensor(Analog0 und Widerstände) in Box auf Dreharm 
+  - Rohr mit Spalt (Holzplattenbefestigung) 
+  
+  Anzeige 
+  - 2LED (12,13 mit Widerstände) an Arduino nach außen
+
+
 
 # 3. Die Funktionsweise<a name="3"></a>
 

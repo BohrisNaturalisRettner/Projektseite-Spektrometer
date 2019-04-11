@@ -7,28 +7,21 @@ Schuljahr 2018/19
 
 ## Inhalt 
 
-### - [1. Das Spektrometer](#1)
-### - [2. Aufbau](#2)
+### [1. Das Spektrometer](#1)
+
+### [2. Aufbau](#2)
 <details>
-  <summary> ### [3. Komponenten](#3)</summary>
+  <summary>Komponenten</summary>
   
 ### [Arduino](#a)
  </details> <hr>
 
-###   - [Aufbau](#4)
-### - [3. Funktionsweise](#5)
-###   - [Versuchsvorbereitung](#6)
-###   - [Versuchsdurchführung](#7)
-###   - [Versuchsnachbereitung / Resultat](#8)
-
-<details>
- <summary>Genauer</summary>
-
-### [Montag, der 17.12.2018](#1)
-### [Dienstag, der 18.12.2018](#2)
-### [Mittwoch, der 19.12.2018](#a)
-### [Montag, den 24.12.2018](#b)
-### [Freitag, der 28.12.2018](#3)
+### [3. Funktionsweise](#5)
+<details> 
+  <summary>Beispielversuch</summary>
+### [Versuchsvorbereitung](#6)
+### [Versuchsdurchführung](#7)
+### [Resultat](#8)
  </details> <hr>
 
 ## Funktionsweise

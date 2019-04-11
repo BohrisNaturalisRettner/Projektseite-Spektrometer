@@ -1,10 +1,10 @@
 # Projektseite Spektrometer
 von Tim Wähner und David Rettmann                                                                                              
-Stormarnschule Ahrensburg
-Klasse 12e 
-Schuljahr 2018/19
-
-
+Stormarnschule Ahrensburg                                                                                                              
+Klasse 12e                                                                                                                             
+Schuljahr 2018/19                                                                                                                      
+                                                                                                                                      
+                                                                                                                                       
 ## Inhalt 
 
 ### [1. Das Spektrometer](#1)
@@ -13,15 +13,16 @@ Schuljahr 2018/19
 <details>
   <summary>Komponenten</summary>
   
-### [Arduino](#a)
+##### [Arduino](#a)
  </details> <hr>
 
 ### [3. Funktionsweise](#5)
 <details> 
   <summary>Beispielversuch</summary>
-### [Versuchsvorbereitung](#6)
-### [Versuchsdurchführung](#7)
-### [Resultat](#8)
+  
+##### [Versuchsvorbereitung](#6)                                                                                          
+##### [Versuchsdurchführung](#7)
+##### [Resultat](#8)
  </details> <hr>
 
 ## Funktionsweise

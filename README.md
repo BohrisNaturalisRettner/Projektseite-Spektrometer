@@ -16,12 +16,7 @@ Schuljahr 2018/19
 </details> <hr>
 
 ## [2. Der Arduino](#2)
-<details>
-  <summary>Genauer</summary>
 
-* ### 
-* ### 
-</details> <hr>
 
 ## [3. Der Aufbau](#3)
 <details>
@@ -29,10 +24,10 @@ Schuljahr 2018/19
   
 * ### [Anschaltmechanismus](#3a)
 * ### [Maximaproduktion](#3b)
-* ### [Weniger Licht](#3c)
-* ### [Lichtmessung](#3d)
-* ### [Bewegung](#3e)
-* ### [Anzeige](#3f)
+* ### [Abschirmung von anderen Lichtquellen](#3c)
+* ### [Messung der Lichtintensität](#3d)
+* ### [Bewegung des Lichtmessers](#3e)
+* ### [Anzeige der Ergebnisse](#3f)
 </details> <hr>
 
 ## [4. Die Funktionsweise](#4)
@@ -44,15 +39,36 @@ Schuljahr 2018/19
   + #### [Versuchsdurchführung](#4a)
   + #### [Versuchsnachbereitung / Resultat](#4c)
  </details> <hr>
+ 
+## [5. Das Fazit](#5)
+
+## [6. Die Quellen](#6)
 
 # 1. Das Spektrometer<a name="1"></a>
 
 ## Was ist ein optisches Spektrometer?<a name="1a"></a>
 
+Bei einem optischen Spektrometer handelt es sich um ein Gerät zum Ausmessen eines optischen Spektrums. Eine Lichtmodell ist das Wellenmodell. In diesem Modell bewegt sich Licht als elektromagnetische Welle durch den Raum. Dabei hat eine verschiedene Wellenlänge lamda eine verschiedene Farbwirkung. Ein Optisches Spektrum beschreibt die Wellenlängen eines Lichtes. Um diese zu bestimmen, wird das Licht durch ein Gitter geleitet. An diesem Gitter bilden sich nach dem Huygenschen Prinzip neue Elementarwellen, die sich kreisförmig ausbreiten - Das Licht wird gebeugt.
+
+///bild huygensches Prinzip
+ 
+Durch die verschiedenen Richtungen der Wellen, interferieren sie miteinadner. Dabei werden die Auslenkungen der Wellen an jedem Punkt addiert. Entscheidend für den die finale Auslenkung ist der Phasenunterschied der Wellen der wiederum vom Gangunterschied vorgegeben wird. Wenn der Gangunterschied eine ganze Wellenlängenanzahl beträgt, trifft immer ein Berg auf einen Berg und ein Tal auf ein Tal und es gibt somit die maximale Auslenkung. Es herrscht konstruktive Interferenz. 
+
+ // skizze bild
+
+Wie in der Skizze beträgt der Gangunterschied beträgt immer: g * sin(α)
+Da für konstruktive Interferenzen der Gangunterschied eine ganze Anzahl an Wellenlängen betragen muss, gilt also n * &lamda; = g * sin(α). Dementsprechend gibt es für eine Wellenlänge nur bestimmte Winkel in denen konstruktive Interferenz herrscht. In den Restlichen Winkeln löschen sich die Wellen destruktiv aus.
+
+
 ## Warum haben wir uns für ein optisches Spektrometer als Projekt entschieden?<a name="1b"></a>
 
+Schon beim Auswählen des ersten Projektes haben wir uns dazu entschieden im 2. Halbjahr ein Projekt mit Physical Computing zu machen. Als wir dann vor der Auswahl des 2. Halbjahrprojektes standen erinnerten wir uns an die Versuche in Physik mit dem Spektrometer. Da wir die Versuche von Anfang an sehr interessant fanden und nachdem Herr Buhl vorgeschlagen hatte in Physik selber Spektrometer zu bauen haben wir den Plan geschmiedet die Fächer Informatik und Physik zu verbinden und ein automatisches Spektrometer zu bauen. Diese Idee konnte uns gleich begeistern und große Motivation wecken. Das Vorhaben schien zwar sehr anspruchsvoll aber nicht völlig utopisch zu sein.
 
 # 2. Der Arduino<a name="2"></a>
+
+Arduino ist ein Gerät zum physical computing. Es verknüpft eine hardware und eine Softwarekomponente. die Hardware ist ein Microcontroller, auf den durch eine Software, den Arduino Editor ein Code gespielt werden kann. Der Microcontroller bietet die Möglichkeit externe Geräte sowohl an anlalogen als auch an digitalen Anschlüssen anzuschließen.
+
+Die Programmierung im Webeditor erfolgt in einer C bzw. C++-ähnlichen Programmiersprache, bei der umfangreiche Bibliotheken die Programmierung vereinfachen. Der Editor selbst besteht aus einem Bereich in dem die bestimmten Befehle aus den Bibliotheken inkludiert (Stepper) und die Variablen definiert werden. Danach gibt es eine Setup Funktion, die ein mal bei Beginn des Programms durchgeführt wird und bei unserem Versuch keine besondere Rolle gespielt hat. Die wichtigste Funktion ist die Loop Funktion. Die Befehle, die sich in dieser Funktion befinden, werden in dieser Reihenfolge immer wieder wiederholt und so durchgehend ausgeführt. so geht der Motor zum Beispiel bei jedem Durchlauf wieder vier Schritte.
 
 
 # 3. Der Aufbau des Spektrometers<a name="3"></a>
@@ -77,7 +93,7 @@ Angeschaltet wird das Spektrometer durch einen Schalter an der Außenbox. Dieser
 
 
 ## Maximaproduktion<a name="3b"></a>
-d
+
 Das Licht wird durch einen Laser produziert, der mit dem 3,3V Anschluss des Arduino verbunden ist. Vor dem Laser befindet sich ein Gitter der Konstante 1/1.000.00.
 
 <p align="center"><img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/MAxima%201.JPG" alt="image" width="600"></p>
@@ -94,7 +110,7 @@ Damit möglichst nur das Licht des Lasers aufgezeichnet wird und Lichtquellen vo
 <img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Weniger%201.JPG" alt="image" width="420"> <img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Weniger%202.jpg" alt="image" width="420">
 
 
-## Messen der Lichtintensität<a name="3d"></a>
+## Messung der Lichtintensität<a name="3d"></a>
 
 Zur Lichtmessung ist ein Photosensor über einen Widerstand an die 5 V Ausgabe des Arduino angeschlossen.
 Zusätzlich geht ein analoges Signal von dem Sensor in den analogen Eingang 0 des Arduino.
@@ -357,4 +373,18 @@ Dafür wird lediglich der Schalter auf der Vorderseite umgelegt. Die blaue Leuch
 Zur Auswertung der Counter wird zunächst der Durchschnitt der ausgeschlagenen Counter berechnet. Dieser beträgt bei unserem Versuch mit dem Laser 59,5. Dieser Wert wird in eine vorbereitete Excel-Tabelle eingetragen, die automatisch den Winkel des Ausschlags und daraus die Wellenlänge des Lasers berechnet. Zusätzlich dazu wird die Abweichung vom Literaturwert der Wellenlänge des Lasers berechnet. Bei einem Durchschnitt vom 59,5 beträgt der Winkel 41,13° und somit die Wellenlänge &lambda; = 657,8nm. Damit hat unser Wert eine Abweichung von 1,2% vom Literaturwert &lamba; = 650nm. 
 
 // Bild ExcelTabelle und Monitor
+
+# Das Fazit<a name="5"></a>
+
+Nach einigen Monaten der intensiven Beschäftigung mit unserem Projekt, ein paar Tiefen aber umso mehr Höhen, sind wir höchst zufrieden mit dem was wir erreicht haben.
+
+Zu Beginn der Projektarbeit stürzten wir uns von unserer Begeisterung übers physical-computing übermannt mit dem Arduino direkt ins Getümmel und stellten schnell fest, dass es zwar in einigen Punkten unseren vorherigen Programmiererfahrungen ähnelt, aber doch in anderen Punkten wie der Arbeit mit dem Stepper-Motor, dem Photosensor und den LEDs uns schnell vor Herausforderungen stellte. 
+Das Internet war uns dabei eine große Hilfe. Auf verschiedenen Internetseiten und Youtube-Kanälen (siehe Quellen) lernten wir den Umgang mit den verschiedenen technischen Komponenten am Arduino. Im Laufe der Zeit wurden wir so auch immer vertrauter mit den Komponenten und somit auch unabhängiger von fremden Codes, die wir zunächst für unser Projekt verwendet hatten.
+
+Auch wenn wir zu Beginn des Projekts den Umfang der Umsetzung anders eingeschätzt haben als er sich schlussendlich ergeben hat, ist das erreichte Ergebnis sehr zufriedenstellend. Insbesondere die zeitliche Belastung durch Klausuren und speziell die Abiturprüfungen hat uns in unserer Aktivität an dem Projekt stark eingeschränkt. Dennoch sind die Ergebnisse der Experimente mit dem Spektrometer überwältigend gut. Eine Abweichung von nur 1,2% vom Literaturwert übertrifft unsere Erwartungen und stimmt uns höchst zufrieden. 
+
+Schlussendlich lässt sich sagen, dass dieses Projekt in vielfacher Hinsicht eine Bereicherung für uns war. Wir gehen mit einem durchweg positiven Gefühl aus dem Projekt und werden sicher an diesem Projekt noch ein wenig weiter tüfteln. 
+
+# Die Quellen<a name="6"></a>
+
 

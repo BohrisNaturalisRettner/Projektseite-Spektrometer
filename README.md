@@ -370,9 +370,9 @@ Dafür wird lediglich der Schalter auf der Vorderseite umgelegt. Die blaue Leuch
 
 ### Versuchsnachbereitung / Resultat<a name="4c"></a>
 
-Zur Auswertung der Counter wird zunächst der Durchschnitt der ausgeschlagenen Counter berechnet. Dieser beträgt bei unserem Versuch mit dem Laser 59,5. Dieser Wert wird in eine vorbereitete Excel-Tabelle eingetragen, die automatisch den Winkel des Ausschlags und daraus die Wellenlänge des Lasers berechnet. Zusätzlich dazu wird die Abweichung vom Literaturwert der Wellenlänge des Lasers berechnet. Bei einem Durchschnitt vom 59,5 beträgt der Winkel 41,13° und somit die Wellenlänge &lambda; = 657,8nm. Damit hat unser Wert eine Abweichung von 1,2% vom Literaturwert &lamba; = 650nm. 
+Zur Auswertung der Counter wird zunächst der Durchschnitt der ausgeschlagenen Counter berechnet. Dieser beträgt bei unserem Versuch mit dem Laser 59,5. Dieser Wert wird in eine vorbereitete Excel-Tabelle eingetragen, die automatisch den Winkel des Ausschlags und daraus die Wellenlänge des Lasers berechnet. Zusätzlich dazu wird die Abweichung vom Literaturwert der Wellenlänge des Lasers berechnet. Bei einem Durchschnitt vom 59,5 beträgt der Winkel 41,13° und somit die Wellenlänge &lambda; = 657,8nm. Damit hat unser Wert eine Abweichung von 1,2% vom Literaturwert &lambda; = 650nm. 
 
-<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Monitor.PNG" alt="image" width="420"><img src=" https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Excel.JPG" alt="image" width="420">
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Monitor.PNG" alt="image" width="420">       <img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Excel.JPG" alt="image" width="420">
 
 # Das Fazit<a name="5"></a>
 

@@ -60,7 +60,7 @@ Ein optisches Spektrometer dient der Wellenlängenbestimmung von Licht einer unb
 
 Das Spektrometer setzt sich aus 6 Komponenten zusammen. Dem Vorgang zum Anschalten, dem Produzieren von den Maxima, der Abdunklung anderer Lichtquellen, dem Messen der Lichtintensität misst, der Bewegung des Lichtmessers und der Anzeige der Ergebnisse.
 
-<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Aufbau%201.JPG" alt="image" width="400">
+<p align="center"><img width="400" src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Aufbau%201.JPG"></p>
 
 
 ## Anschaltmechanismus<a name="3a"></a>

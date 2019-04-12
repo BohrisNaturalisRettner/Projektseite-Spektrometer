@@ -60,14 +60,15 @@ Ein optisches Spektrometer dient der Wellenlängenbestimmung von Licht einer unb
 
 Das Spektrometer setzt sich aus 6 Komponenten zusammen. Dem Vorgang zum Anschalten, dem Produzieren von den Maxima, der Abdunklung anderer Lichtquellen, dem Messen der Lichtintensität misst, der Bewegung des Lichtmessers und der Anzeige der Ergebnisse.
 
-<p align="center"><img width="400" src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Aufbau%201.JPG"></p>
+<p align="center"><img width="600" src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Aufbau%201.JPG"></p>
 
 
 ## Anschaltmechanismus<a name="3a"></a>
 
 Angeschaltet wird das Spektrometer durch den Schalter an der Außenbox. dieser ist über einen Widerstand mit einer blauen Led verbunden. Angeschossen ist das System an den 5V Anschluss (rot) des Arduino und eine Erdung (blau). Außerdem geht ein Kabel in den Analogen Anschluss 1 des Arduino (gelb)
 
-<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Anschalt%201.JPG" alt="image" width="400"> <img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Anschalt%202.JPG" alt="image" width="400">
+<p align="center"><img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Anschalt%201.JPG" alt="image" width="600"></p>
+<p align="center"><img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Anschalt%202.JPG" alt="image" width="600"></p>
 
 
 ## Maximaproduktion<a name="3b"></a>

@@ -48,27 +48,27 @@ Schuljahr 2018/19
 
 ## Was ist ein optisches Spektrometer?<a name="1a"></a>
 
-Bei einem optischen Spektrometer handelt es sich um ein Gerät zum Ausmessen eines optischen Spektrums. Eine Lichtmodell ist das Wellenmodell. In diesem Modell bewegt sich Licht als elektromagnetische Welle durch den Raum. Dabei hat eine verschiedene Wellenlänge lamda eine verschiedene Farbwirkung. Ein Optisches Spektrum beschreibt die Wellenlängen eines Lichtes. Um diese zu bestimmen, wird das Licht durch ein Gitter geleitet. An diesem Gitter bilden sich nach dem Huygenschen Prinzip neue Elementarwellen, die sich kreisförmig ausbreiten - Das Licht wird gebeugt.
+Bei einem optischen Spektrometer handelt es sich um ein Gerät zum Ausmessen eines optischen Spektrums. Ein Lichtmodell ist das Wellenmodell. In diesem Modell bewegt sich Licht als elektromagnetische Welle durch den Raum. Dabei hat jede Wellenlänge &lamda; eine spezifische Farbwirkung. Ein optisches Spektrum beschreibt die Wellenlängen eines Lichtes. Um diese zu bestimmen, wird das Licht durch ein Gitter geleitet. An diesem Gitter bilden sich nach dem Huygenschen Prinzip neue Elementarwellen, die sich kreisförmig ausbreiten: Das Licht wird gebeugt.
 
 ///bild huygensches Prinzip
  
-Durch die verschiedenen Richtungen der Wellen, interferieren sie miteinadner. Dabei werden die Auslenkungen der Wellen an jedem Punkt addiert. Entscheidend für den die finale Auslenkung ist der Phasenunterschied der Wellen der wiederum vom Gangunterschied vorgegeben wird. Wenn der Gangunterschied eine ganze Wellenlängenanzahl beträgt, trifft immer ein Berg auf einen Berg und ein Tal auf ein Tal und es gibt somit die maximale Auslenkung. Es herrscht konstruktive Interferenz. 
+Durch die verschiedenen Richtungen der Wellen interferieren sie miteinander. Dabei werden die Auslenkungen der Wellen an jedem Punkt addiert. Entscheidend für die finale Auslenkung ist der Phasenunterschied der Wellen, der wiederum vom Gangunterschied vorgegeben wird. Wenn der Gangunterschied eine ganze Wellenlängenanzahl beträgt, trifft immer ein Berg auf einen Berg und ein Tal auf ein Tal, und es gibt somit die maximale Auslenkung. Es herrscht konstruktive Interferenz. 
 
  // skizze bild
 
-Wie in der Skizze beträgt der Gangunterschied beträgt immer: g * sin(α)
-Da für konstruktive Interferenzen der Gangunterschied eine ganze Anzahl an Wellenlängen betragen muss, gilt also n * &lamda; = g * sin(α). Dementsprechend gibt es für eine Wellenlänge nur bestimmte Winkel in denen konstruktive Interferenz herrscht. In den Restlichen Winkeln löschen sich die Wellen destruktiv aus.
+Wie in der Skizze zu sehen ist, beträgt der Gangunterschied immer: g * sin(α)
+Da für konstruktive Interferenzen der Gangunterschied eine ganze Anzahl an Wellenlängen betragen muss, gilt also n * &lamda; = g * sin(α). Dementsprechend gibt es für eine Wellenlänge nur bestimmte Winkel, in denen konstruktive Interferenz herrscht. In den restlichen Winkeln löschen sich die Wellen destruktiv aus.
 
 
 ## Warum haben wir uns für ein optisches Spektrometer als Projekt entschieden?<a name="1b"></a>
 
-Schon beim Auswählen des ersten Projektes haben wir uns dazu entschieden im 2. Halbjahr ein Projekt mit Physical Computing zu machen. Als wir dann vor der Auswahl des 2. Halbjahrprojektes standen erinnerten wir uns an die Versuche in Physik mit dem Spektrometer. Da wir die Versuche von Anfang an sehr interessant fanden und nachdem Herr Buhl vorgeschlagen hatte in Physik selber Spektrometer zu bauen haben wir den Plan geschmiedet die Fächer Informatik und Physik zu verbinden und ein automatisches Spektrometer zu bauen. Diese Idee konnte uns gleich begeistern und große Motivation wecken. Das Vorhaben schien zwar sehr anspruchsvoll aber nicht völlig utopisch zu sein.
+Schon bei der Auswahl des Projektes im 1. Halbjahr haben wir uns vorgenommen, im 2. Halbjahr ein Projekt mit Physical Computing zu machen. Als dann die konkrete Entscheidung über das 2. Halbjahrprojekt anstand, erinnerten wir uns an die Versuche in Physik mit dem Spektrometer. Da wir diese Versuche von Anfang an sehr interessant fanden und vor dem Hintergrund, dass Herr Buhl vorgeschlagen hatte, in Physik selbst einmal ein Spektrometer zu bauen, haben wir den Plan geschmiedet, die Fächer Informatik und Physik zu verbinden und ein automatisches Spektrometer zu bauen. Diese Idee hat uns gleich begeistert und große Motivation geweckt. Das Vorhaben schien zwar sehr anspruchsvoll, aber nicht völlig utopisch zu sein.
 
 # 2. Der Arduino<a name="2"></a>
 
-Arduino ist ein Gerät zum physical computing. Es verknüpft eine hardware und eine Softwarekomponente. die Hardware ist ein Microcontroller, auf den durch eine Software, den Arduino Editor ein Code gespielt werden kann. Der Microcontroller bietet die Möglichkeit externe Geräte sowohl an anlalogen als auch an digitalen Anschlüssen anzuschließen.
+Arduino ist ein Gerät zum Physical Computing. Es verknüpft eine Hardware- und eine Softwarekomponente. Die Hardware ist ein Microcontroller, auf den durch eine Software, den Arduino Editor, ein Code gespielt werden kann. Der Microcontroller bietet die Möglichkeit, externe Geräte sowohl an analogen als auch an digitalen Anschlüssen anzuschließen.
 
-Die Programmierung im Webeditor erfolgt in einer C bzw. C++-ähnlichen Programmiersprache, bei der umfangreiche Bibliotheken die Programmierung vereinfachen. Der Editor selbst besteht aus einem Bereich in dem die bestimmten Befehle aus den Bibliotheken inkludiert (Stepper) und die Variablen definiert werden. Danach gibt es eine Setup Funktion, die ein mal bei Beginn des Programms durchgeführt wird und bei unserem Versuch keine besondere Rolle gespielt hat. Die wichtigste Funktion ist die Loop Funktion. Die Befehle, die sich in dieser Funktion befinden, werden in dieser Reihenfolge immer wieder wiederholt und so durchgehend ausgeführt. so geht der Motor zum Beispiel bei jedem Durchlauf wieder vier Schritte.
+Die Programmierung im Webeditor erfolgt in einer C bzw. C++-ähnlichen Programmiersprache, bei der umfangreiche Bibliotheken die Programmierung vereinfachen. Der Editor selbst besteht aus einem Bereich, in dem die bestimmten Befehle aus den Bibliotheken inkludiert sind (bei uns für den Stepper) und die Variablen definiert werden. Danach gibt es eine Setup-Funktion, die einmal bei Beginn des Programms durchgeführt wird und bei unserem Versuch keine besondere Rolle gespielt hat. Die wichtigste Funktion ist die Loop-Funktion. Die Befehle, die sich in dieser Funktion befinden, werden immer wieder in gleicher Reihenfolge wiederholt und so durchgehend ausgeführt. Zum Beispiel dreht sich in unserer Apparatur der Motor bei jedem Durchlauf immer wieder vier Schritte.
 
 
 # 3. Der Aufbau des Spektrometers<a name="3"></a>
@@ -376,12 +376,12 @@ Zur Auswertung der Counter wird zunächst der Durchschnitt der ausgeschlagenen C
 
 # Das Fazit<a name="5"></a>
 
-Nach einigen Monaten der intensiven Beschäftigung mit unserem Projekt, ein paar Tiefen aber umso mehr Höhen, sind wir höchst zufrieden mit dem was wir erreicht haben.
+Nach einigen Monaten intensiver Beschäftigung mit unserem Projekt, das uns ein paar Tiefen, aber umso mehr Höhen bescherte, sind wir höchst zufrieden mit dem, was wir erreicht haben.
 
-Zu Beginn der Projektarbeit stürzten wir uns von unserer Begeisterung übers physical-computing übermannt mit dem Arduino direkt ins Getümmel und stellten schnell fest, dass es zwar in einigen Punkten unseren vorherigen Programmiererfahrungen ähnelt, aber doch in anderen Punkten wie der Arbeit mit dem Stepper-Motor, dem Photosensor und den LEDs uns schnell vor Herausforderungen stellte. 
+Zu Beginn der Projektarbeit stürzten wir uns - begeistert vom Physical Computing - mit dem Arduino direkt ins Getümmel und stellten schnell fest, dass es zwar in einigen Punkten unseren vorherigen Programmiererfahrungen ähnelte, aber uns doch in anderen Punkten, wie zum Beispiel bei der Arbeit mit dem Stepper-Motor, dem Photosensor und den LEDs, auch vor große Herausforderungen stellte. 
 Das Internet war uns dabei eine große Hilfe. Auf verschiedenen Internetseiten und Youtube-Kanälen (siehe Quellen) lernten wir den Umgang mit den verschiedenen technischen Komponenten am Arduino. Im Laufe der Zeit wurden wir so auch immer vertrauter mit den Komponenten und somit auch unabhängiger von fremden Codes, die wir zunächst für unser Projekt verwendet hatten.
 
-Auch wenn wir zu Beginn des Projekts den Umfang der Umsetzung anders eingeschätzt haben als er sich schlussendlich ergeben hat, ist das erreichte Ergebnis sehr zufriedenstellend. Insbesondere die zeitliche Belastung durch Klausuren und speziell die Abiturprüfungen hat uns in unserer Aktivität an dem Projekt stark eingeschränkt. Dennoch sind die Ergebnisse der Experimente mit dem Spektrometer überwältigend gut. Eine Abweichung von nur 1,2% vom Literaturwert übertrifft unsere Erwartungen und stimmt uns höchst zufrieden. 
+Wir mussten bei der Umsetzung feststellen, dass wir die Komplexität und den Aufwand der Projektrealisierung unterschätzt haben. Zudem waren wir durch Klausuren und speziell die Abiturprüfungen hat uns in unserer Aktivität an dem Projekt stark eingeschränkt. Um so zufriedener sind wir mit dem erreichten Ergebnis. Dennoch sind die Ergebnisse der Experimente mit dem Spektrometer überwältigend gut. Eine Abweichung von nur 1,2% vom Literaturwert übertrifft unsere Erwartungen und stimmt uns höchst zufrieden. 
 
 Schlussendlich lässt sich sagen, dass dieses Projekt in vielfacher Hinsicht eine Bereicherung für uns war. Wir gehen mit einem durchweg positiven Gefühl aus dem Projekt und werden sicher an diesem Projekt noch ein wenig weiter tüfteln. 
 

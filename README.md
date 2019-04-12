@@ -60,38 +60,38 @@ Ein optisches Spektrometer dient der Wellenlängenbestimmung von Licht einer unb
 
 Das Spektrometer setzt sich aus 6 Komponenten zusammen. Dem Vorgang zum Anschalten, dem Produzieren von den Maxima, der Abdunklung anderer Lichtquellen, dem Messen der Lichtintensität misst, der Bewegung des Lichtmessers und der Anzeige der Ergebnisse.
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Aufbau%201.JPG" alt="image" width="1500">
 
 
 ## Anschaltmechanismus<a name="3a"></a>
 
 Angeschaltet wird das Spektrometer durch den Schalter an der Außenbox. dieser ist über einen Widerstand mit einer blauen Led verbunden. Angeschossen ist das System an den 5V Anschluss (rot) des Arduino und eine Erdung (blau). Außerdem geht ein Kabel in den Analogen Anschluss 1 des Arduino (gelb)
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Anschalt%201.JPG" alt="image" width="1500">
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Anschalt%202.JPG" alt="image" width="1500">
 
 
 ## Maximaproduktion<a name="3b"></a>
 
 Das Licht wird durch einen an den 3,3V Anschluss des Arduino angeschlossenen Laser produziert. davor befindet sich ein Gitter der Konstante 1/1.000.00.
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/MAxima%201.JPG" alt="image" width="1500">
 
 Der Laser und das Gitter befinden sich auf einem „Holztisch“, welcher mit einem Winkel gehalten wird und werden durch Holz und Isolierband zusammengehalten. Dabei wird versucht den Laser möglichst senkrecht auf das Gitter auszurichten. Ein Winkel zwischen beiden Elementen, der auf den Holztische geschraubt ist, gibt die Ausrichtung vor und garantiert die senkrechte Position.
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Maxima%202.JPG" alt="image" width="1500">
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Maxima%203.JPG" alt="image" width="1500">
 
 
 ## Weniger Licht<a name="3c"></a>
 
 Damit von außen weniger Licht unser Lichtverhältnis stört und damit der genauigkeit des Versuches schadet, befindet sich der ganze Versuch in einer Holzbox. Lichtquellen innerhalb dieserBox sind nach Möglichkeit mit Tape zugeklebt.
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Weniger%201.JPG" alt="image" width="1500">
 
-//BILD Isolierband (neu)
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Weniger%202.jpg" alt="image" width="1500">
 
 
 ## Lichtmessung<a name="3d"></a>
@@ -99,64 +99,65 @@ Damit von außen weniger Licht unser Lichtverhältnis stört und damit der genau
 Zur Lichtmessung ist ein Photosensor über einen Widerstand an die 5 V Ausgabe des Arduino angeschlossen.
 Zusätzlich geht ein analoges Signal von dem Sensor in den Analogen Eingang 0 des Arduino.
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Lichtmessung%201.JPG" alt="image" width="1500">
 
 Damit das Licht richtig gemessen werden kann, befindet sich der Sensor in einer Kabelbox um Licht von den anderen Seiten abzufangen.
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Lichtmessung%202.JPG" alt="image" width="1500">
 
 Die Kabel werden durch ein möglischst kleines Loch aus der Box geführt.
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Lichtmessung%203.JPG" alt="image" width="1500">
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Lichtmessung%204.JPG" alt="image" width="1500">
 
 In Richtung des Lasers ist ein Rohr vor die Photozelle gesetzt, damit das Licht gebündelt aufgefangen werden kann. Der Eingang des Rohres ist mit einem Plastikdeckel und Klebeband zu einem Schlitz geformt, damit der Bereich des Lichtes so klein wie möglich ist. Das Rohr wird mit einem Holzstück vor der Photozelle in Position gehalten.
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Lichtmessung%205.JPG" alt="image" width="1500">
 
 
 ## Bewegung<a name="3e"></a>
 
 Um den Messapperat zu bewegen ist der unipolare Steppermotor „28BYJ-48“ über ein Motordriverboard an die Anschlüsse 8-11 des Arduino geschlossen, über die er die Informationen über die Bewegung erhält. Die 5V Stromversorung erhält der Steppermotor nicht über den Arduino sondern durch ein externes Kabel, das ebenfalls an das Driverboard angeschlossen ist.
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Bewegung%201.JPG" alt="image" width="1500">
 
-//BILD (Untertitel Stromversorgung)
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Bewegung%202%20STromversorgung.JPG" alt="image" width="1500"> (Untertitel Stromversorgung)
 
-//BILD (Untertitel Motor Driverboard)
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/BEwegung%203%20MotorDriverBoard.JPG" alt="image" width="1500"> (Untertitel Motor Driverboard)
 
 Der Motor selbst ist auf zwei Holzblöcke mit dem Drehpunkt genau unter dem Gitter geschraubt. Die Holzblöcke sind durch einen Winkel mit der Bodenplatte verbunden.
 Die Motorwelle ist über eine Zange mit dem Dreharm verbunden, sodass dieser sich bei Drehung des Motors mitdreht.
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/BEwegung%204%20Motorhalter.JPG" alt="image" width="1500">
 
 Der Dreharm besteht aus einer Metallplatte, an die die Zange befestigt ist, um die Drehung zu übertragen. Das Ende der Platte befindet sich auf einem Rad, um möglichst wenig Reibung zu erzeugen.
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/BEwegung%205.JPG" alt="image" width="1500">
 
 Links von dem Dreharm befindet sich ein Winkel, um die Startposition des Drehapperates festzulegen.
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/BEwegung%206.JPG" alt="image" width="1500">
 
 Ein weiterer Dünner Winkel ist auf den Dreharm gesteckt. An ihm ist der Messapperat mit Tape angebracht, so dass dieser sich bei Drehung des Motors dreht.
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/BEwegung%207.JPG" alt="image" width="1500">
 
 
 ## Anzeige<a name="3f"></a>
 
 Um am Ende das Ergebnis auszulesen, gibt es den Monitor im Arduino Editor. Um einfach nur zu sehen ob der Versuch erfolgreich war, dienen eine rote und eine grüne LED an der Außenwand der Box.
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Anzeige%201.JPG" alt="image" width="1500">
 
-//BILDf
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Anzeige%202.JPG" alt="image" width="1500">
 
 Die LEDs sind an die Ausgänge 12 und 13 des Arduino und jeweils über einen 100 &Omega; Widerstand an eine gemeinsame Erdung angeschlossen.
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/ANzeige%203.JPG" alt="image" width="1500">
 
-//BILD
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/ANzeige%204.JPG" alt="image" width="1500">
+
 
 # 4. Die Funktionsweise<a name="4"></a>
 

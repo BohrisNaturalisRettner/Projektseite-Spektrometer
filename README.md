@@ -55,22 +55,108 @@ Ein optisches Spektrometer dient der Wellenlängenbestimmung von Licht einer unb
 
 # 2. Der Arduino
 
-# 3. Der Aufbau<a name="3"></a>
 
-## Anschalten<a name="3a"></a>
+# 3. Der Aufbau des Spektrometers<a name="3"></a>
+
+Das Spektrometer setzt sich aus 6 Komponenten zusammen. Dem Vorgang zum Anschalten, dem Produzieren von den Maxima, der Abdunklung anderer Lichtquellen, dem Messen der Lichtintensität misst, der Bewegung des Lichtmessers und der Anzeige der Ergebnisse.
+
+//BILD
 
 
-## Bewegung<a name="3b"></a>
+## Anschaltmechanismus<a name="3a"></a>
 
-  
-## Licht <a name="3c"></a>
+Angeschaltet wird das Spektrometer durch den Schalter an der Außenbox. dieser ist über einen Widerstand mit einer blauen Led verbunden. Angeschossen ist das System an den 5V Anschluss (rot) des Arduino und eine Erdung (blau). Außerdem geht ein Kabel in den Analogen Anschluss 1 des Arduino (gelb)
+
+//BILD
+
+//BILD
+
+
+## Maximaproduktion<a name="3b"></a>
+
+Das Licht wird durch einen an den 3,3V Anschluss des Arduino angeschlossenen Laser produziert. davor befindet sich ein Gitter der Konstante 1/1.000.00.
+
+//BILD
+
+Der Laser und das Gitter befinden sich auf einem „Holztisch“, welcher mit einem Winkel gehalten wird und werden durch Holz und Isolierband zusammengehalten. Dabei wird versucht den Laser möglichst senkrecht auf das Gitter auszurichten. Ein Winkel zwischen beiden Elementen, der auf den Holztische geschraubt ist, gibt die Ausrichtung vor und garantiert die senkrechte Position.
+
+//BILD
+
+//BILD
+
+
+## Weniger Licht<a name="3c"></a>
+
+Damit von außen weniger Licht unser Lichtverhältnis stört und damit der genauigkeit des Versuches schadet, befindet sich der ganze Versuch in einer Holzbox. Lichtquellen innerhalb dieserBox sind nach Möglichkeit mit Tape zugeklebt.
+
+//BILD
+
+//BILD Isolierband (neu)
 
 
 ## Lichtmessung<a name="3d"></a>
 
-  
-## Anzeige<a name="3e"></a>
+Zur Lichtmessung ist ein Photosensor über einen Widerstand an die 5 V Ausgabe des Arduino angeschlossen.
+Zusätzlich geht ein analoges Signal von dem Sensor in den Analogen Eingang 0 des Arduino.
 
+//BILD
+
+Damit das Licht richtig gemessen werden kann, befindet sich der Sensor in einer Kabelbox um Licht von den anderen Seiten abzufangen.
+
+//BILD
+
+Die Kabel werden durch ein möglischst kleines Loch aus der Box geführt.
+
+//BILD
+
+//BILD
+
+In Richtung des Lasers ist ein Rohr vor die Photozelle gesetzt, damit das Licht gebündelt aufgefangen werden kann. Der Eingang des Rohres ist mit einem Plastikdeckel und Klebeband zu einem Schlitz geformt, damit der Bereich des Lichtes so klein wie möglich ist. Das Rohr wird mit einem Holzstück vor der Photozelle in Position gehalten.
+
+//BILD
+
+
+## Bewegung<a name="3e"></a>
+
+Um den Messapperat zu bewegen ist der unipolare Steppermotor „28BYJ-48“ über ein Motordriverboard an die Anschlüsse 8-11 des Arduino geschlossen, über die er die Informationen über die Bewegung erhält. Die 5V Stromversorung erhält der Steppermotor nicht über den Arduino sondern durch ein externes Kabel, das ebenfalls an das Driverboard angeschlossen ist.
+
+//BILD
+
+//BILD (Untertitel Stromversorgung)
+
+//BILD (Untertitel Motor Driverboard)
+
+Der Motor selbst ist auf zwei Holzblöcke mit dem Drehpunkt genau unter dem Gitter geschraubt. Die Holzblöcke sind durch einen Winkel mit der Bodenplatte verbunden.
+Die Motorwelle ist über eine Zange mit dem Dreharm verbunden, sodass dieser sich bei Drehung des Motors mitdreht.
+
+//BILD
+
+Der Dreharm besteht aus einer Metallplatte, an die die Zange befestigt ist, um die Drehung zu übertragen. Das Ende der Platte befindet sich auf einem Rad, um möglichst wenig Reibung zu erzeugen.
+
+//BILD
+
+Links von dem Dreharm befindet sich ein Winkel, um die Startposition des Drehapperates festzulegen.
+
+//BILD
+
+Ein weiterer Dünner Winkel ist auf den Dreharm gesteckt. An ihm ist der Messapperat mit Tape angebracht, so dass dieser sich bei Drehung des Motors dreht.
+
+//BILD
+
+
+## Anzeige<a name="3f"></a>
+
+Um am Ende das Ergebnis auszulesen, gibt es den Monitor im Arduino Editor. Um einfach nur zu sehen ob der Versuch erfolgreich war, dienen eine rote und eine grüne LED an der Außenwand der Box.
+
+//BILD
+
+//BILDf
+
+Die LEDs sind an die Ausgänge 12 und 13 des Arduino und jeweils über einen 100 &Omega; Widerstand an eine gemeinsame Erdung angeschlossen.
+
+//BILD
+
+//BILD
 
 # 4. Die Funktionsweise<a name="4"></a>
 
@@ -87,7 +173,7 @@ Im Folgenden wird ein Versuch und seine Auswertung beschrieben wie er mit unsere
 
 ### Versuchsdurchführung<a name="4a"></a>
 
-Vor der eigentlichen Durchführung des Versuches müssen einige Vorbereitungen getroffen werden. Zum einen muss der Arduino an den Computer über das USB Typ-B-Kabel angeschlossen werden, um im Arduino Creator das Monitoring aufzurufen. Außerdem gilt es die Stromversorgung des Motors über eine Steckdose herzustellen. Zusätzlich dazu muss sichergestellt werden, dass der Dreharm sich wirklich auf der Ausgangsposition bei 0° befindet. Zuletzt gilt es die Box wieder "lichtdicht" zu verschließen. Sind all diese Faktoren gegeben kann der Versuch begonnen werden.
+Vor der eigentlichen Durchführung des Versuches müssen einige Vorbereitungen getroffen werden. Zum einen muss der Arduino an den Computer über das USB Typ-B-Kabel angeschlossen werden, um im Arduino Editor das Monitoring aufzurufen. Außerdem gilt es die Stromversorgung des Motors über eine Steckdose herzustellen. Zusätzlich dazu muss sichergestellt werden, dass der Dreharm sich wirklich auf der Ausgangsposition bei 0° befindet. Zuletzt gilt es die Box wieder "lichtdicht" zu verschließen. Sind all diese Faktoren gegeben kann der Versuch begonnen werden.
 Dafür wird lediglich der Schalter auf der Vorderseite umgelegt. Leuchtet nun die blaue Leuchte, läuft der Versuch. Er gilt als beendet und erfolgreich, wenn die rote und grüne LED leuchten. Im Monitor werden nun die Counter 59 & 60 angegeben als Ausschläge. 
 
 // Bild/Video Versuch Schalter und LED 

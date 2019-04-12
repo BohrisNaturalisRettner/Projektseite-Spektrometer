@@ -67,9 +67,9 @@ Das Spektrometer setzt sich aus 6 Komponenten zusammen. Dem Vorgang zum Anschalt
 
 Angeschaltet wird das Spektrometer durch den Schalter an der Außenbox. dieser ist über einen Widerstand mit einer blauen Led verbunden. Angeschossen ist das System an den 5V Anschluss (rot) des Arduino und eine Erdung (blau). Außerdem geht ein Kabel in den Analogen Anschluss 1 des Arduino (gelb)
 
-<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Anschalt%201.JPG" alt="image" width="1500">
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Anschalt%201.JPG" alt="image" width="750">
 
-<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Anschalt%202.JPG" alt="image" width="1500">
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Anschalt%202.JPG" alt="image" width="750">
 
 
 ## Maximaproduktion<a name="3b"></a>

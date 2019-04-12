@@ -175,3 +175,192 @@ Zur Auswertung der Counter wird zunächst der Durchschnitt der ausgeschlagenen C
 ## Funktionsweise
 
 Der Laser is an den 3.3V Anschluss des Arduino angeschlossen. Das emittierte Licht ist monochromatisch und fällt durch das Gitter mit 1000 Strichen pro mm. Das Licht wird durch das Huygensche Prinzip gebrochen und interferiert nach dem Gitter. Es entsteht ein Hauptmaximum und links und rechts davon jeweils ein Maximum erster Ordnung (Gangunterschied = nlamda).Mit dem Spektrometer messen wir nun diesen Winkel und bestimmen damit die Wellenlänge des Lichtes des Lasers. Zum messen dient ein Photorsensor, der die Lichteinstrahlung als analoges Signal an den Arduino weitergibt. Der Lichtsensor befindet sich auf einem Dreharm, der von einem Steppermotor konstant gedreht wird. Der Sensor bewegt sich also in konstanter Winkelgeschwindigkeit um 90° von dem Hauptmaximum aus und durchläuft damit ein Nebenmaximum. Damit das Ergebnis genauer ist, befindet sich eine Rhe mit zwei Schlitzen vor dem Sensor, damit nur ein kleiner Bereich des Lichtes einfällt. Im Arduino fällt nun die Information der Zeit mit der Lichtintensität zusammen. Je nachdem in welcher Zeit die Lichtintensität ein gewisses Maß überschreitet, merkt sich der Arduino durch eine Variable diese Stelle. Diese können durch den Monitor angezeigt und so ausgelesen werden. Eingeteilt ist das Intervall in 2x 128 schritte. Da es sich dabei um 90° pro Weg handelt können die Schritte x90/128 gerechnet werden um den Winkel zu erhalten. Mit der Bragg Gleichung lässt sich aus sin() von dem Winkel x die Gitterkonstante 1/1000000 die Wellenlänge des Lichtes errechnen. In unserem finalen Aufbau beleuchten wir den Versuch von der anderen Seite und überprüfen die Funktionsweise unseres Versuches, indem wir mit dem Literaturwert der Wellenlänge (350nm) die Counter bestimmen die die korrekte Wellenlänge ergeben würden. Somit leuchtet die eine Led wenn der Bereich getroffen wurde und die andere wenn außerhalb des Bereiches kein erhöter Lichtausschlag gemessen wurde. Leuchten also beide Lampen war der Versuch erfolgreich.
+
+Funktionsweise
+
+
+
+Beim Anschalten durch den Schalter, wird der Stromkreislauf geschlossen. Dadurch leuchtet die blaue LED und zeigt somit an, dass das System eingeschaltet ist. Zusätzlich ist wie vorher erwähnt ein Kabel an den analogen Anschluss A1 geschlossen. Fließt Strom an dieser Stelle kein Strom ist das Signal gleich 0. Fließt Strom, wird ein Signal größer als 0 aufgenommen. Daher gibt es in der Loop Funktion vor allem 2 Bereiche. 1. Den Bereich A1=0 und den Bereich A1>0. wird A1 größer als 0 wahrgenommen, fängt eine Variable in der Loop Funktion hochzuzählen. Das sind die „steps“. Gleichzeitig beginnt sich der Motor und damit auch der Dreharm und der daran festgemachte Lichtapperat zu drehen.
+durch die gleichförmige bewegung des motors ist in diesem Versuch steps eine anzeige für zeit und Schritte. Da sich der Drehpunkt des Motors genau unter dem Gitter befindet, kann so aus der Stepanzahl auch der Winkel berechnet werden.
+
+```
+int sensorPin2 = A1;
+int sensorValue2 = 0;
+
+#include
+
+// Define Constants
+
+// Number of steps per internal motor revolution
+const float STEPS_PER_REV = 32;
+
+// Amount of Gear Reduction
+const float GEAR_RED = 64;
+
+// Number of steps per geared output rotation
+const float STEPS_PER_OUT_REV = STEPS_PER_REV * GEAR_RED;
+
+// Define Variables
+
+// Number of Steps Required
+int StepsRequired;
+int steps = 0;
+
+// Create Instance of Stepper Class
+// Specify Pins used for motor coils
+// The pins used are 8,9,10,11
+// Connected to ULN2003 Motor Driver In1, In2, In3, In4
+// Pins entered in sequence 1-3-2-4 for proper step sequencing
+
+Stepper steppermotor(STEPS_PER_REV, 8, 10, 9, 11);
+
+loop
+StepsRequired = 4;
+if (sensorValue2 > 0) {
+if (steps < STEPS_PER_OUT_REV / 16) {
+steppermotor.setSpeed(25);
+steppermotor.step(StepsRequired);
+steps = steps + 1;
+}
+
+sensorValue2 = analogRead(sensorPin2);
+```
+
+Dieser misst dabei das von dem laser emitierte Licht, dass durch das Gitter mit 1000 Striche pro mm fällt. an diesem Gitter bilden sich nach dem Huygenschen Prinzip neue Elementarwellen, die sich kreisförmig ausbreiten - Das Licht wird gebeugt.
+bild huygensches Prinzip
+
+Durch die verschiedeen Richtungen der Wellen, interferieren sie miteinadner. Dabei werden die Auslenkungen der Wellen an jedem Punkt addiert. Entscheident für den Phasenunterschied der Wellen ist der Gangunterschied. Wenn der Gangunterschied eine ganze Wellenlängenanzahl beträgt, trifft immer ein Berg auf einen Berg und ein Tal auf ein Tal und es gibt somit die maximale Auslenkung. Es herrscht konstruktive Interferenz. Der Gangunterschied beträgt immer: g*sina.
+Skizze gangunterschied
+
+Da für konstruktive Interferenzen der gangunterschcied eine ganze Anzahl an Wellenlängen betragen muss, gilt also nlamda= g* sina. Dementsprechend gibt es für eine Wellenlänge nur bestimmte Winkel in denen konstruktive Interferenz herrscht. In den Restlichen Winkeln löschen sich die Wellen destruktiv aus. In unserem Versuch beträgt die Wellenlänge des Lasers 350nm. Es befindet sich also ein Maximum erster Ordnung bei a= °. dieses ist auch in beide Richtungen im Kasten klar zu sehen.
+
+Bild Maxima
+In diesem Versuch wird dieser Winkel des ersten Maximums gemessen und daraufhin Rückschlüsse auf die Wellenlänge des Lasers gezogen.
+
+der Lichtsensor misst dauerhaft die Lichtintensität durch den Photoelektrischen Effekt, auf den wir an dieser Stelle aber nicht weiter eingehen. jedoch gibt es eine Spannungsveränderung im Stromkreislauf, die mit dem Kabel in den Analogen Eingang 0 Weitergegeben wird. so wird mit dem befehl
+
+```
+int sensorPin = A0;
+int sensorValue = 0;
+
+loop
+sensorValue = analogRead(sensorPin); // read the value from the sensor
+```
+
+mit jedem durchlauf die Lichtintensität gemessen. der Motor dreht sich nun wie gesagt. durch die counter wird die zeitliche komponente mit dem Lichtsignal verknüpft. ein counter beschreibt zum beispiel:
+wenn also in diesem zeitlichen intervall ein erhötes Lichtsignal aufgenommen wird, wird der counter = eine höhere Zahl als 0 gesetzt. Diese bleiben so bis zum ende erhalten und können auch nachträglich ausgelesen werden. Die Anzahl der Steps die eine ganze Umdrehung des Motors dauert ist als STEPsPEROUTREV/4 festgehalten und beträgt 512 steps.
+
+```
+int counter1;
+int counter2;
+
+…
+
+int counter128;
+int counter129;
+
+loop
+if (sensorValue > 620) {
+if (43 < steps && 45 > steps) {
+counter45 = 45;
+}
+if (44 < steps && 46 > steps) {
+counter46 = 46;
+}
+if (45 < steps && 47 > steps) {
+counter47 = 47;
+}
+if (46 < steps && 48 > steps) {
+counter48 = 48;
+}
+…
+if (64 < steps && 66 > steps) {
+counter66 = 66;
+}
+if (65 < steps && 67 > steps) {
+counter67 = 67;
+}
+if (66 < steps && 68 > steps) {
+counter68 = 68;
+}
+if (67 < steps && 69 > steps) {
+counter69 = 69;
+}
+if (68 < steps && 70 > steps) {
+counter70 = 70;
+}
+```
+
+Wenn die Anzahl der Steps = STEPS PEROUTREV/16 also = 128 ist, hat sich der Motor um 90 ° gedreht und dreht sich nun in die gegenrichtung
+
+```
+if (sensorValue2 > 0) {
+if (STEPS_PER_OUT_REV / 8 > steps && STEPS_PER_OUT_REV / 16 <= steps) {
+steppermotor.step(-StepsRequired);
+steps = steps + 1;
+}
+```
+
+Für den Versuch sind aber nur die ersen 90° entscheident, da der Sensor in diesem Bereich das Maximum schon einmal durchläuft. für jeden der 128 steps gibt es einen counter, der am ende anzeigt, dass in diesem bereich mehr licht gemssen wurde.
+
+wenn steps= SPETSPER OUT REV/8 befindet sich der Motor wieder in der Ausgangsposition und die Geschwidnigkeit auf 0 gesetzt. Die grüne und die rote LED zeigen nun an ob der Versuch funktioniert hat. Leuchtet die gründe Led heißt das, dass in einem Bereich von 10% Abweichng nahc oben und nach unten für die korrekte Wellenlänge eine erhöhte Lichtintensität gemessen wurde. Leuchtet die rote LED, wurde in dem Bereich um dieses Intervall kein Ausschlag gemessen. Leuchten beide ist also sichergestellt, dass Licht in dem Bereich aufgenommen wurde und somit kein fehler in der Bewegung vorliegt und dass auch der ichtsensor richtig kalibriert ist und er nicht mit einer zu geringen oder zu hohen Sensibilität eingestellt wurde.
+
+```
+int ledrot = 12;
+int ledgruen = 13;
+
+loop
+
+if (sensorValue2 > 0) {
+if (steps >= STEPS_PER_OUT_REV / 8) {
+steppermotor.setSpeed(0);
+if (counter52 == 52 || counter53 == 53 || counter54 == 54 || counter55 == 55 || counter56 == 56 || counter57 == 57 || counter58 == 58 || counter59 == 59 || counter60 == 60 || counter61 == 61 || counter62 == 62 || counter63 == 63 || counter64 == 64 || counter65 == 65) {
+digitalWrite(ledrot, HIGH);
+}
+if (counter50 == 0 || counter51 == 0 || counter66 == 0 || counter67 == 0) {
+digitalWrite(ledgruen, HIGH);
+}
+}
+}
+```
+
+will man die genauen Messwerte erhalten muss man aber den Monitor im Editor benutzen. Der einfachheit halber werden die counter auf den wert gesetzt, wecher counter sie sind. Sprich wird im Bereich von counter 69 ein Signal aufgeommen beträgt der wert des counters 69. diese werte werden sowie die steos anzahl und die Lichtintensität im Monitor angezeigt.
+
+```
+setup
+Serial.begin(9600); //sets serial port for communication
+
+setup
+
+Serial.println(steps);
+Serial.println(sensorValue);//prints the values coming from the sensor on the screen
+Serial.println(counter44);
+Serial.println(counter45);
+Serial.println(counter46);
+
+…
+
+Serial.println(counter69);
+Serial.println(counter70);
+Serial.println(counter71);
+```
+
+So muss man aber nicht mehr durchzählen welcher counter ausgelöst wurde sondern kann glleich die zahl auslesen. da die counter bei counter1 =0 steps beginnen muss der counterbetrag - 1 gerechnet werden um die stepanzahl zu erhalten. die 90° Bewegung sind in 128 steps aufgeteilt sodass sich der Faktor 90/128 ergibt um die stepanzahl in die Gradzahl umzuwandeln. Mit der oben erarbeiteten Formel kann durch einsetzen des Winkels a die aus dem gemessenen Winkel resultierende Wellenlänge lamda errechnen.
+
+Beendet wird der Versuch indem der Schalter wieder umgelegt wird. wenn das Signal bei A1=0 ist und die Stepanzahl bei 256 (STEWOS/8) erlöschen alle LEDs und alle counter werden zurückgesetzt. Nun kann durch erneutes Umlegen des Schalters der Versuch von neuem beginnen.
+
+```
+if (sensorValue2 == 0 && steps >= STEPS_PER_OUT_REV / 8) {
+steps = 0;
+digitalWrite(ledrot, LOW);
+digitalWrite(ledgruen, LOW);
+counter1 = 0;
+counter2 = 0;
+counter3 = 0;
+counter4 = 0;
+…
+counter126 = 0;
+counter127 = 0;
+counter128 = 0;
+}
+```

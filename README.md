@@ -296,7 +296,7 @@ digitalWrite(ledgruen, HIGH);
 }
 ```
 
-will man die genauen Messwerte erhalten muss man aber den Monitor im Editor benutzen. Der einfachheit halber werden die counter auf den wert gesetzt, wecher counter sie sind. Sprich wird im Bereich von counter 69 ein Signal aufgeommen beträgt der wert des counters 69. diese werte werden sowie die steos anzahl und die Lichtintensität im Monitor angezeigt.
+Will man die genauen Messwerte erhalten, muss man den Monitor im Arduino Editor benutzen. Der Einfachheit halber werden die counter auf den Wert ihrer Position gesetzt. Sprich wird im Bereich von counter 69 ein Signal aufgenommen, beträgt der Wert des counters ebenso 69. Diese Werte werden sowie die Anzahl der steps und die Lichtintensität am Photosensor im Monitor angezeigt.
 
 ```
 setup
@@ -317,9 +317,10 @@ Serial.println(counter70);
 Serial.println(counter71);
 ```
 
-So muss man aber nicht mehr durchzählen welcher counter ausgelöst wurde sondern kann glleich die zahl auslesen. da die counter bei counter1 =0 steps beginnen muss der counterbetrag - 1 gerechnet werden um die stepanzahl zu erhalten. die 90° Bewegung sind in 128 steps aufgeteilt sodass sich der Faktor 90/128 ergibt um die stepanzahl in die Gradzahl umzuwandeln. Mit der oben erarbeiteten Formel kann durch einsetzen des Winkels a die aus dem gemessenen Winkel resultierende Wellenlänge lamda errechnen.
+So muss man nicht mehr durchzählen welcher counter ausgelöst wurde, sondern kann gleich die Zahl auslesen. Da die counter bei 
+counter1 = 0 steps beginnen muss vom Counterbetrag 1 abgezogen werden, um die Stepanzahl zu erhalten. Die 90° Bewegung findet in 128 steps statt, sodass sich der Faktor 90/128 ergibt um von der Stepanzahl auf die Gradzahl der Drehung zu kommen. Mit der eingangs erarbeiteten Formel kann durch Einsetzen des Winkels α die aus dem gemessenen Winkel resultierende Wellenlänge &lamda; errechnen.
 
-Beendet wird der Versuch indem der Schalter wieder umgelegt wird. wenn das Signal bei A1=0 ist und die Stepanzahl bei 256 (STEWOS/8) erlöschen alle LEDs und alle counter werden zurückgesetzt. Nun kann durch erneutes Umlegen des Schalters der Versuch von neuem beginnen.
+Beendet wird der Versuch indem der Schalter wieder umgelegt wird. Wenn das Signal bei A1=0 ist und die Stepanzahl bei 256 (STEPSPEROUTREV/8) erlöschen alle LEDs und sämtliche counter werden zurückgesetzt. Nun kann durch erneutes Umlegen des Schalters der Versuch von Neuem beginnen.
 
 ```
 if (sensorValue2 == 0 && steps >= STEPS_PER_OUT_REV / 8) {
@@ -336,9 +337,6 @@ counter127 = 0;
 counter128 = 0;
 }
 ```
-
-
-
 
 
 ## Beispielversuch<a name="4e"></a> 

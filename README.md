@@ -11,35 +11,35 @@ Schuljahr 2018/19
 <details>
   <summary>Genauer</summary>
   
-### [Was ist ein (optisches) Spektrometer?](#1a)
-### [Warum haben wir uns für ein optisches Spektrum als Projekt entschieden?](#1b)
+* ### [Was ist ein (optisches) Spektrometer?](#1a)
+* ### [Warum haben wir uns für ein optisches Spektrum als Projekt entschieden?](#1b)
 </details> <hr>
 
 ## [2. Der Arduino](#2)
 <details>
   <summary>Genauer</summary>
 
-### Funktion pipapo
-### usw
+* ### Funktion pipapo
+* ### usw
 </details> <hr>
 
 ## [3. Der Aufbau](#3)
 <details>
   <summary>Genauer</summary>
   
-### [Anschalten](#3a)
-### [Bewegung](#3b)
-### [Licht](#3c)
-### [Lichtmessung](#3d)
-### [Anzeige](#3e)
+* ### [Anschalten](#3a)
+* ### [Bewegung](#3b)
+* ### [Licht](#3c)
+* ### [Lichtmessung](#3d)
+* ### [Anzeige](#3e)
 </details> <hr>
 
 ## [4. Die Funktionsweise](#4)
 <details> 
   <summary>Genauer</summary>
   
-### [Funktionsweise und Code](#4d) 
-### [Beispielversuch](#4e)                                                                                          
+* ### [Funktionsweise und Code](#4d) 
+* ### [Beispielversuch](#4e)                                                                                          
   + #### [Versuchsdurchführung](#4a)
   + #### [Versuchsnachbereitung / Resultat](#4c)
  </details> <hr>

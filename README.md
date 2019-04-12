@@ -27,11 +27,12 @@ Schuljahr 2018/19
 <details>
   <summary>Genauer</summary>
   
-* ### [Anschalten](#3a)
-* ### [Bewegung](#3b)
-* ### [Licht](#3c)
+* ### [Anschaltmechanismus](#3a)
+* ### [Maximaproduktion](#3b)
+* ### [Weniger Licht](#3c)
 * ### [Lichtmessung](#3d)
-* ### [Anzeige](#3e)
+* ### [Bewegung](#3e)
+* ### [Anzeige](#3f)
 </details> <hr>
 
 ## [4. Die Funktionsweise](#4)
@@ -48,12 +49,10 @@ Schuljahr 2018/19
 
 ## Was ist ein optisches Spektrometer?<a name="1a"></a>
 
-Ein optisches Spektrometer dient der Wellenlängenbestimmung von Licht einer unbekannten Wellenlänge &lambda;. Dazu wird diese an einem Gitter gebeugt. Die entstandenen Elementarwellen interferieren miteinander und es entsteht ein von der Wellenlänge &lambda; abhängiges Interferenzmuster. Das Spektrometer dient nun der Bestimmung der Winkel in denen die Maxima auftreten, aus denen man schlussendlich die Wellenlänge des Lichts errechnen kann. 
-
 ## Warum haben wir uns für ein optisches Spektrometer als Projekt entschieden?<a name="1b"></a>
 
 
-# 2. Der Arduino
+# 2. Der Arduino<a name="2"></a>
 
 
 # 3. Der Aufbau des Spektrometers<a name="3"></a>
@@ -146,8 +145,6 @@ Die LEDs sind an die Ausgänge 12 und 13 des Arduino und jeweils über einen 100
 
 
 # 4. Die Funktionsweise<a name="4"></a>
-
-## physikalische Vorgänge 
 
 ## Funktionsweise und Code<a name="4d"></a>
 

@@ -40,8 +40,8 @@ Schuljahr 2018/19
   
 ### [Funktionsweise und Code](#4d) 
 ### [Beispielversuch](#4e)                                                                                          
-#### [Versuchsdurchführung](#4a)
-#### [Versuchsnachbereitung / Resultat](#4c)
+  + #### [Versuchsdurchführung](#4a)
+  + #### [Versuchsnachbereitung / Resultat](#4c)
  </details> <hr>
 
 # 1. Das Spektrometer<a name="1"></a>

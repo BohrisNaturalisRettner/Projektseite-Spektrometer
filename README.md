@@ -52,23 +52,23 @@ Bei einem optischen Spektrometer handelt es sich um ein Gerät zum Ausmessen ein
 
 <p align="center"><img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Hygen.JPG" alt="image" width="600"></p>
  
-Durch die verschiedenen Richtungen der Wellen interferieren sie miteinander. Dabei werden die Auslenkungen der Wellen an jedem Punkt addiert. Entscheidend für die finale Auslenkung ist der Phasenunterschied der Wellen, der wiederum vom Gangunterschied vorgegeben wird. Wenn der Gangunterschied eine ganze Wellenlängenanzahl beträgt, trifft immer ein Berg auf einen Berg und ein Tal auf ein Tal, und es gibt somit die maximale Auslenkung. Es herrscht konstruktive Interferenz. 
+Durch die verschiedenen Richtungen der Wellen interferieren sie miteinander. Dabei werden die Auslenkungen der Wellen an jedem Punkt addiert. Entscheidend für die finale Auslenkung ist der Phasenunterschied der Wellen, der wiederum vom Gangunterschied vorgegeben wird. Wenn der Gangunterschied eine ganze Wellenlängenanzahl beträgt, treffen immer ein Berg auf einen Berg und ein Tal auf ein Tal, und es gibt somit die maximale Auslenkung. Es herrscht konstruktive Interferenz. 
 
 <p align="center"><img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Gangunterschied.JPG" alt="image" width="600"></p>
 
-Wie in der Skizze zu sehen ist, beträgt der Gangunterschied immer: g * sin(α)
-Da für konstruktive Interferenzen der Gangunterschied eine ganze Anzahl an Wellenlängen betragen muss, gilt also n * &lamda; = g * sin(α). Dementsprechend gibt es für eine Wellenlänge nur bestimmte Winkel, in denen konstruktive Interferenz herrscht. In den restlichen Winkeln löschen sich die Wellen destruktiv aus.
+Wie in der Skizze zu sehen ist, beträgt der Gangunterschied immer: ∆s = g * sin(α).
+Da für konstruktive Interferenzen der Gangunterschied eine ganze Anzahl an Wellenlängen betragen muss, gilt also: n * &lamda; = g * sin(α). Dementsprechend gibt es für eine Wellenlänge nur bestimmte Winkel, in denen konstruktive Interferenz herrscht. In den restlichen Winkeln löschen sich die Wellen destruktiv aus.
 
 
 ## Warum haben wir uns für ein optisches Spektrometer als Projekt entschieden?<a name="1b"></a>
 
-Schon bei der Auswahl des Projektes im 1. Halbjahr haben wir uns vorgenommen, im 2. Halbjahr ein Projekt mit Physical Computing zu machen. Als dann die konkrete Entscheidung über das 2. Halbjahrprojekt anstand, erinnerten wir uns an die Versuche in Physik mit dem Spektrometer. Da wir diese Versuche von Anfang an sehr interessant fanden und vor dem Hintergrund, dass Herr Buhl vorgeschlagen hatte, in Physik selbst einmal ein Spektrometer zu bauen, haben wir den Plan geschmiedet, die Fächer Informatik und Physik zu verbinden und ein automatisches Spektrometer zu bauen. Diese Idee hat uns gleich begeistert und große Motivation geweckt. Das Vorhaben schien zwar sehr anspruchsvoll, aber nicht völlig utopisch zu sein.
+Schon bei der Auswahl des Projektes im 1. Halbjahr haben wir uns vorgenommen, im 2. Halbjahr ein Projekt mit Physical Computing zu machen. Als dann die konkrete Entscheidung über das 2. Halbjahrprojekt anstand, erinnerten wir uns an die Versuche in Physik mit dem Spektrometer. Da wir diese Versuche von Anfang an sehr interessant fanden, und vor dem Hintergrund, dass Herr Buhl vorgeschlagen hatte, in Physik selbst einmal ein Spektrometer zu bauen, haben wir den Plan geschmiedet, die Fächer Informatik und Physik zu verbinden und ein automatisches Spektrometer zu bauen. Diese Idee hat uns gleich begeistert und große Motivation geweckt. Das Vorhaben schien zwar sehr anspruchsvoll, aber nicht völlig utopisch zu sein.
 
 # 2. Der Arduino<a name="2"></a>
 
 Arduino ist ein Gerät zum Physical Computing. Es verknüpft eine Hardware- und eine Softwarekomponente. Die Hardware ist ein Microcontroller, auf den durch eine Software, den Arduino Editor, ein Code gespielt werden kann. Der Microcontroller bietet die Möglichkeit, externe Geräte sowohl an analogen als auch an digitalen Anschlüssen anzuschließen.
-
-Die Programmierung im Webeditor erfolgt in einer C bzw. C++-ähnlichen Programmiersprache, bei der umfangreiche Bibliotheken die Programmierung vereinfachen. Der Editor selbst besteht aus einem Bereich, in dem die bestimmten Befehle aus den Bibliotheken inkludiert sind (bei uns für den Stepper) und die Variablen definiert werden. Danach gibt es eine Setup-Funktion, die einmal bei Beginn des Programms durchgeführt wird und bei unserem Versuch keine besondere Rolle gespielt hat. Die wichtigste Funktion ist die Loop-Funktion. Die Befehle, die sich in dieser Funktion befinden, werden immer wieder in gleicher Reihenfolge wiederholt und so durchgehend ausgeführt. Zum Beispiel dreht sich in unserer Apparatur der Motor bei jedem Durchlauf immer wieder vier Schritte.
+ 
+Die Programmierung im Webeditor erfolgt in einer C bzw. C++ -ähnlichen Programmiersprache, bei der umfangreiche Bibliotheken die Programmierung vereinfachen. Der Editor selbst besteht aus einem Bereich, in dem die bestimmten Befehle aus den Bibliotheken inkludiert sind (bei uns für den Stepper) und die Variablen definiert werden. Danach gibt es eine Setup-Funktion, die einmal bei Beginn des Programms durchgeführt wird und bei unserem Versuch keine besondere Rolle gespielt hat. Die wichtigste Funktion ist die Loop-Funktion. Die Befehle, die sich in dieser Funktion befinden, werden immer wieder in gleicher Reihenfolge wiederholt und so durchgehend ausgeführt. Zum Beispiel dreht sich in unserer Apparatur der Motor bei jedem Durchlauf immer wieder vier Schritte.
 
 
 # 3. Der Aufbau des Spektrometers<a name="3"></a>
@@ -76,7 +76,7 @@ Die Programmierung im Webeditor erfolgt in einer C bzw. C++-ähnlichen Programmi
 Den Aufbau des Spektrometers erläutern wir anhand der folgenden sechs Bereiche:
 - Anschaltmechanismus, 
 - Maximaproduktion, 
-- Abschirmung von anderen Lichtquellen
+- Abschirmung von anderen Lichtquellen,
 - Messen der Lichtintensität, 
 - Bewegung des Lichtmessers und 
 - Anzeige der Ergebnisse.
@@ -86,15 +86,15 @@ Den Aufbau des Spektrometers erläutern wir anhand der folgenden sechs Bereiche:
 
 ## Anschaltmechanismus<a name="3a"></a>
 
-Angeschaltet wird das Spektrometer durch einen Schalter an der Außenbox. Dieser ist über einen Widerstand (STROMSTÄRKE SENKEN) mit einer blauen LED verbunden. Das System ist an den 5V Anschluss (rot) des Arduino und eine Erdung (blau) angeschlossen. Außerdem führt ein Kabel in den analogen Anschluss 1 des Arduino (gelb).
+Angeschaltet wird das Spektrometer durch einen Schalter an der Außenbox. Dieser ist über einen Widerstand, um die Stromstärke auf ein für die Geräte verträglichen Wert zu senken, mit einer blauen LED verbunden. Das System ist an den 5V Anschluss (rot) des Arduino und eine Erdung (blau) angeschlossen. Außerdem führt ein Kabel in den analogen Anschluss A1 des Arduino (gelb).
 
 <p align="center"><img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Anschalt%201.JPG" alt="image" width="600"></p>
-<p align="center"><img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Anschalt%202.JPG" alt="image" width="600"></p>
+<p align="center"><img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/schalter%20neu.jpg" alt="image" width="600"></p>
 
 
 ## Maximaproduktion<a name="3b"></a>
 
-Das Licht wird durch einen Laser produziert, der mit dem 3,3V Anschluss des Arduino verbunden ist. Vor dem Laser befindet sich ein Gitter der Konstante 1/1.000.00.
+Das Licht wird durch einen Laser produziert, der mit dem 3,3V Anschluss des Arduino verbunden ist. Vor dem Laser befindet sich ein Gitter der Konstante 1/1.000.000.
 
 <p align="center"><img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/MAxima%201.JPG" alt="image" width="600"></p>
 
@@ -113,7 +113,7 @@ Damit möglichst nur das Licht des Lasers aufgezeichnet wird und Lichtquellen vo
 ## Messung der Lichtintensität<a name="3d"></a>
 
 Zur Lichtmessung ist ein Photosensor über einen Widerstand an die 5 V Ausgabe des Arduino angeschlossen.
-Zusätzlich geht ein analoges Signal von dem Sensor in den analogen Eingang 0 des Arduino.
+Zusätzlich geht ein analoges Signal von dem Sensor in den analogen Eingang A0 des Arduino.
 
 <p align="center"><img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Lichtmessung%201.JPG" alt="image" width="700"></p>
 
@@ -150,7 +150,7 @@ Links von dem Dreharm befindet sich ein Winkel, um die Startposition des Drehapp
 
 <p align="center"><img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/BEwegung%206.JPG" alt="image" width="600"></p>
 
-Ein weiterer dünner Winkel ist auf den Dreharm gesteckt. An ihm ist der Messapperat mit Tape angebracht, so dass dieser sich bei Drehung des Motors dreht.
+Ein weiterer dünner Winkel ist auf den Dreharm gesteckt. An ihm ist der Messapperat mit Tape angebracht, sodass dieser sich bei Drehung des Motors dreht.
 
 <p align="center"><img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/BEwegung%207.JPG" alt="image" width="600"></p>
   
@@ -170,7 +170,7 @@ Die LEDs sind an die Ausgänge 12 und 13 des Arduino und jeweils über einen 100
 
 ## Funktionsweise und Code<a name="4d"></a>
 
-Durch das Betätigen des Schalters wird der Stromkreislauf geschlossen. Dadurch leuchtet die blaue LED, die somit anzeigt, dass das System eingeschaltet ist. Zusätzlich ist, wie vorher erwähnt, ein Kabel an den analogen Anschluss A1 angeschlossen. Fließt an dieser Stelle kein Strom ist das Signal gleich 0. Fließt Strom, wird ein Signal größer als 0 aufgenommen. Daher gibt es in der Loop-Funktion insbesondere zwei Bereiche: Zum einen den Bereich A1=0 und zum anderen den Bereich A1>0. Wird A1 größer als 0 wahrgenommen, beginnt eine Variable in der Loop Funktion hochzuzählen. Das sind die „steps“. Gleichzeitig beginnen sich der Motor und damit auch der Dreharm und der daran festgemachte Lichtmessapparat zu drehen.
+Durch das Betätigen des Schalters wird der Stromkreislauf geschlossen. Dadurch leuchtet die blaue LED, die somit anzeigt, dass das System eingeschaltet ist. Zusätzlich ist, wie vorher erwähnt, ein Kabel an den analogen Anschluss A1 angeschlossen. Fließt an dieser Stelle kein Strom, ist das Signal gleich 0. Fließt Strom, wird ein Signal größer als 0 aufgenommen. Daher gibt es in der Loop-Funktion insbesondere zwei Bereiche: zum einen den Bereich A1=0 und zum anderen den Bereich A1>0. Wird A1 größer als 0 wahrgenommen, beginnt eine Variable in der Loop Funktion hochzuzählen. Das sind die „steps“. Gleichzeitig beginnen sich der Motor und damit auch der Dreharm und der daran festgemachte Lichtmessapparat zu drehen.
 Durch die gleichförmige Bewegung des Motors lassen sich in diesem Versuch anhand der "steps" Zeit und Weg der Bewegung des Dreharms bestimmen. Da sich der Drehpunkt des Motors genau unter dem Gitter befindet, kann so aus der Stepanzahl auch unmittelbar der Drehwinkel berechnet werden.
 
 ```
@@ -221,9 +221,7 @@ Der Lichtmessapparat misst während seiner Bewegung das Interferenzmuster des La
 In unserem Versuch beträgt die Wellenlänge des Lasers &lambda; = 650nm. Es befindet sich also ein Maximum erster Ordnung bei 
 α = 40,54°. Dieses ist auch in beiden Richtungen im Kasten klar sichtbar.
 
-//Bild Maxima
-
-In diesem Versuch wird eben dieser Winkel des ersten Maximums bestimmt und daraus Rückschluss auf die Wellenlänge des Lasers gezogen.
+In diesem Versuch wird eben dieser Winkel des ersten Maximums bestimmt und daraus auf die Wellenlänge des Lasers geschlossen.
 
 Der Lichtsensor misst dauerhaft die Lichtintensität durch den photoelektrischen Effekt, auf den wir an dieser Stelle aber nicht weiter eingehen. Eine Änderung der Lichtintensität wird durch eine Spannungsveränderung im Stromkreislauf an den analogen Anschluss A0 weitergegeben. So wird mit dem Befehl
 
@@ -277,7 +275,7 @@ counter70 = 70;
 }
 ```
 
-Wenn also in diesem zeitlichen Intervall ein erhöhtes Lichtsignal über einer festen Schwelle von 620 aufgenommen wird, wird der counter gleich einer höheren Zahl als 0 gesetzt. Diese bleiben so bis zum Ende erhalten und können auch nachträglich noch ausgelesen werden. Die Anzahl der steps, die der Motor für eine ganze Umdrehung benötigt, ist dadurch, dass der Motor bei einem step intern vier SChritte geht, als "STEPsPEROUTREV/4" festgehalten und beträgt 512 steps.
+Wenn also in diesem zeitlichen Intervall ein erhöhtes Lichtsignal über einer festen Schwelle von 620 aufgenommen wird, wird der counter gleich einer höheren Zahl als 0 gesetzt. Diese bleiben so bis zum Ende erhalten und können auch nachträglich noch ausgelesen werden. Die Anzahl der steps, die der Motor für eine ganze Umdrehung benötigt, ist dadurch, dass der Motor bei einem step intern vier Schritte geht, als "STEPsPEROUTREV/4" festgehalten und beträgt 512 steps.
 
 Wenn die Anzahl der steps = STEPS PEROUTREV/16 also = 128 ist, hat sich der Motor um 90 ° gedreht und dreht sich daraufhin in die Gegenrichtung zurück.
 

@@ -12,15 +12,15 @@ Schuljahr 2018/19
   <summary>Genauer</summary>
   
 * ### [Was ist ein (optisches) Spektrometer?](#1a)
-* ### [Warum haben wir uns für ein optisches Spektrum als Projekt entschieden?](#1b)
+* ### [Warum haben wir uns für ein optisches Spektrometer als Projekt entschieden?](#1b)
 </details> <hr>
 
 ## [2. Der Arduino](#2)
 <details>
   <summary>Genauer</summary>
 
-* ### Funktion pipapo
-* ### usw
+* ### 
+* ### 
 </details> <hr>
 
 ## [3. Der Aufbau](#3)
@@ -147,41 +147,12 @@ Die LEDs sind an die Ausgänge 12 und 13 des Arduino und jeweils über einen 100
 
 # 4. Die Funktionsweise<a name="4"></a>
 
+## physikalische Vorgänge 
+
 ## Funktionsweise und Code<a name="4d"></a>
 
-
-
-
-
-
-## Beispielversuch<a name="4e"></a> 
-
-Im Folgenden wird ein Versuch und seine Auswertung beschrieben wie er mit unserem Spektrometer durchgeführt werden kann. 
-
-### Versuchsdurchführung<a name="4a"></a>
-
-Vor der eigentlichen Durchführung des Versuches müssen einige Vorbereitungen getroffen werden. Zum einen muss der Arduino an den Computer über das USB Typ-B-Kabel angeschlossen werden, um im Arduino Editor das Monitoring aufzurufen. Außerdem gilt es die Stromversorgung des Motors über eine Steckdose herzustellen. Zusätzlich dazu muss sichergestellt werden, dass der Dreharm sich wirklich auf der Ausgangsposition bei 0° befindet. Zuletzt gilt es die Box wieder "lichtdicht" zu verschließen. Sind all diese Faktoren gegeben kann der Versuch begonnen werden.
-Dafür wird lediglich der Schalter auf der Vorderseite umgelegt. Leuchtet nun die blaue Leuchte, läuft der Versuch. Er gilt als beendet und erfolgreich, wenn die rote und grüne LED leuchten. Im Monitor werden nun die Counter 59 & 60 angegeben als Ausschläge. 
-
-// Bild/Video Versuch Schalter und LED 
-
-### Versuchsnachbereitung / Resultat<a name="4c"></a>
-
-Zur Auswertung der Counter wird zunächst der Durchschnitt der ausgeschlagenen Counter berechnet. Dieser beträgt bei unserem Versuch mit dem Laser 59,5. Dieser Wert wird in eine vorbereitete Excel-Tabelle eingetragen, die automatisch den Winkel des Ausschlags und daraus die Wellenlänge des Lasers berechnet. Zusätzlich dazu wird außerdem die Abweichung vom Literaturwert der Wellenlänge des Lasers berechnet. Bei einem Durchschnitt vom 59,5 beträgt der Winkel 41,13° und somit die Wellenlänge &lambda; = 657,8nm. Damit hat unser Wert eine Abweichung von 1,2% vom Literaturwert &lamba; = 650nm. 
-
-// Bild ExcelTabelle und Monitor
-
-
-## Funktionsweise
-
-Der Laser is an den 3.3V Anschluss des Arduino angeschlossen. Das emittierte Licht ist monochromatisch und fällt durch das Gitter mit 1000 Strichen pro mm. Das Licht wird durch das Huygensche Prinzip gebrochen und interferiert nach dem Gitter. Es entsteht ein Hauptmaximum und links und rechts davon jeweils ein Maximum erster Ordnung (Gangunterschied = nlamda).Mit dem Spektrometer messen wir nun diesen Winkel und bestimmen damit die Wellenlänge des Lichtes des Lasers. Zum messen dient ein Photorsensor, der die Lichteinstrahlung als analoges Signal an den Arduino weitergibt. Der Lichtsensor befindet sich auf einem Dreharm, der von einem Steppermotor konstant gedreht wird. Der Sensor bewegt sich also in konstanter Winkelgeschwindigkeit um 90° von dem Hauptmaximum aus und durchläuft damit ein Nebenmaximum. Damit das Ergebnis genauer ist, befindet sich eine Rhe mit zwei Schlitzen vor dem Sensor, damit nur ein kleiner Bereich des Lichtes einfällt. Im Arduino fällt nun die Information der Zeit mit der Lichtintensität zusammen. Je nachdem in welcher Zeit die Lichtintensität ein gewisses Maß überschreitet, merkt sich der Arduino durch eine Variable diese Stelle. Diese können durch den Monitor angezeigt und so ausgelesen werden. Eingeteilt ist das Intervall in 2x 128 schritte. Da es sich dabei um 90° pro Weg handelt können die Schritte x90/128 gerechnet werden um den Winkel zu erhalten. Mit der Bragg Gleichung lässt sich aus sin() von dem Winkel x die Gitterkonstante 1/1000000 die Wellenlänge des Lichtes errechnen. In unserem finalen Aufbau beleuchten wir den Versuch von der anderen Seite und überprüfen die Funktionsweise unseres Versuches, indem wir mit dem Literaturwert der Wellenlänge (350nm) die Counter bestimmen die die korrekte Wellenlänge ergeben würden. Somit leuchtet die eine Led wenn der Bereich getroffen wurde und die andere wenn außerhalb des Bereiches kein erhöter Lichtausschlag gemessen wurde. Leuchten also beide Lampen war der Versuch erfolgreich.
-
-Funktionsweise
-
-
-
-Beim Anschalten durch den Schalter, wird der Stromkreislauf geschlossen. Dadurch leuchtet die blaue LED und zeigt somit an, dass das System eingeschaltet ist. Zusätzlich ist wie vorher erwähnt ein Kabel an den analogen Anschluss A1 geschlossen. Fließt Strom an dieser Stelle kein Strom ist das Signal gleich 0. Fließt Strom, wird ein Signal größer als 0 aufgenommen. Daher gibt es in der Loop Funktion vor allem 2 Bereiche. 1. Den Bereich A1=0 und den Bereich A1>0. wird A1 größer als 0 wahrgenommen, fängt eine Variable in der Loop Funktion hochzuzählen. Das sind die „steps“. Gleichzeitig beginnt sich der Motor und damit auch der Dreharm und der daran festgemachte Lichtapperat zu drehen.
-durch die gleichförmige bewegung des motors ist in diesem Versuch steps eine anzeige für zeit und Schritte. Da sich der Drehpunkt des Motors genau unter dem Gitter befindet, kann so aus der Stepanzahl auch der Winkel berechnet werden.
+Beim Anschalten durch den Schalter wird der Stromkreislauf geschlossen. Dadurch leuchtet die blaue LED und zeigt somit an, dass das System eingeschaltet ist. Zusätzlich ist wie vorher erwähnt ein Kabel an den analogen Anschluss A1 angeschlossen. Fließt an dieser Stelle kein Strom ist das Signal gleich 0. Fließt Strom, wird ein Signal größer als 0 aufgenommen. Daher gibt es in der Loop- Funktion vor allendingen 2 Bereiche. Zum einen den Bereich A1=0 und zum anderen den Bereich A1>0. Wird A1 größer als 0 wahrgenommen, fängt eine Variable in der Loop Funktion an hochzuzählen. Das sind die „steps“. Gleichzeitig beginnen sich der Motor und damit auch der Dreharm und der daran festgemachte Lichtapparat zu drehen.
+Durch die gleichförmige Bewegung des Motors ist in diesem Versuch "steps" eine Anzeige für Zeit und Weg. Da sich der Drehpunkt des Motors genau unter dem Gitter befindet, kann so aus der Stepanzahl auch der Drehwinkel berechnet werden.
 
 ```
 int sensorPin2 = A1;
@@ -226,18 +197,16 @@ steps = steps + 1;
 sensorValue2 = analogRead(sensorPin2);
 ```
 
-Dieser misst dabei das von dem laser emitierte Licht, dass durch das Gitter mit 1000 Striche pro mm fällt. an diesem Gitter bilden sich nach dem Huygenschen Prinzip neue Elementarwellen, die sich kreisförmig ausbreiten - Das Licht wird gebeugt.
-bild huygensches Prinzip
+Dieser misst dabei, das Interferenzmuster des Laser-Lichtes, dass durch das Gitter mit 1000 Strichen pro mm entsteht.
 
-Durch die verschiedeen Richtungen der Wellen, interferieren sie miteinadner. Dabei werden die Auslenkungen der Wellen an jedem Punkt addiert. Entscheident für den Phasenunterschied der Wellen ist der Gangunterschied. Wenn der Gangunterschied eine ganze Wellenlängenanzahl beträgt, trifft immer ein Berg auf einen Berg und ein Tal auf ein Tal und es gibt somit die maximale Auslenkung. Es herrscht konstruktive Interferenz. Der Gangunterschied beträgt immer: g*sina.
-Skizze gangunterschied
+In unserem Versuch beträgt die Wellenlänge des Lasers &lambda; = 650nm. Es befindet sich also ein Maximum erster Ordnung bei 
+α = 40,54°. Dieses ist auch in beide Richtungen im Kasten klar sichtbar.
 
-Da für konstruktive Interferenzen der gangunterschcied eine ganze Anzahl an Wellenlängen betragen muss, gilt also nlamda= g* sina. Dementsprechend gibt es für eine Wellenlänge nur bestimmte Winkel in denen konstruktive Interferenz herrscht. In den Restlichen Winkeln löschen sich die Wellen destruktiv aus. In unserem Versuch beträgt die Wellenlänge des Lasers 350nm. Es befindet sich also ein Maximum erster Ordnung bei a= °. dieses ist auch in beide Richtungen im Kasten klar zu sehen.
+//Bild Maxima
 
-Bild Maxima
-In diesem Versuch wird dieser Winkel des ersten Maximums gemessen und daraufhin Rückschlüsse auf die Wellenlänge des Lasers gezogen.
+In diesem Versuch wird eben dieser Winkel des ersten Maximums gemessen und daraus Rückschluss auf die Wellenlänge des Lasers gezogen.
 
-der Lichtsensor misst dauerhaft die Lichtintensität durch den Photoelektrischen Effekt, auf den wir an dieser Stelle aber nicht weiter eingehen. jedoch gibt es eine Spannungsveränderung im Stromkreislauf, die mit dem Kabel in den Analogen Eingang 0 Weitergegeben wird. so wird mit dem befehl
+Der Lichtsensor misst dauerhaft die Lichtintensität durch den Photoelektrischen Effekt, auf den wir an dieser Stelle aber nicht weiter eingehen. Eine Änderung der Lichtintensität wird durch eine Spannungsveränderung im Stromkreislauf an den analogen Anschluss A0 weitergegeben. So wird mit dem Befehl
 
 ```
 int sensorPin = A0;
@@ -247,8 +216,8 @@ loop
 sensorValue = analogRead(sensorPin); // read the value from the sensor
 ```
 
-mit jedem durchlauf die Lichtintensität gemessen. der Motor dreht sich nun wie gesagt. durch die counter wird die zeitliche komponente mit dem Lichtsignal verknüpft. ein counter beschreibt zum beispiel:
-wenn also in diesem zeitlichen intervall ein erhötes Lichtsignal aufgenommen wird, wird der counter = eine höhere Zahl als 0 gesetzt. Diese bleiben so bis zum ende erhalten und können auch nachträglich ausgelesen werden. Die Anzahl der Steps die eine ganze Umdrehung des Motors dauert ist als STEPsPEROUTREV/4 festgehalten und beträgt 512 steps.
+in jedem Durchlauf die Lichtintensität gemessen. Durch "counter" werden die zeitliche Komponente und das Lichtsignal verknüpft. Ein "counter" beschreibt zum Beispiel:
+
 
 ```
 int counter1;
@@ -291,7 +260,9 @@ counter70 = 70;
 }
 ```
 
-Wenn die Anzahl der Steps = STEPS PEROUTREV/16 also = 128 ist, hat sich der Motor um 90 ° gedreht und dreht sich nun in die gegenrichtung
+wenn also in diesem zeitlichen Intervall ein erhöhtes Lichtsignal über einer festen Schwelle von 620 aufgenommen wird, wird der counter gleich einer höheren Zahl als 0 gesetzt. Diese bleiben so bis zum Ende erhalten und können auch nachträglich noch ausgelesen werden. Die Anzahl der steps, die eine ganze Umdrehung des Motors dauert ist als "STEPsPEROUTREV/4" festgehalten und beträgt 512 steps.
+
+Wenn die Anzahl der steps = STEPS PEROUTREV/16 also = 128 ist, hat sich der Motor um 90 ° gedreht und dreht sich daraufhin in die Gegenrichtung zurück.
 
 ```
 if (sensorValue2 > 0) {
@@ -301,9 +272,10 @@ steps = steps + 1;
 }
 ```
 
-Für den Versuch sind aber nur die ersen 90° entscheident, da der Sensor in diesem Bereich das Maximum schon einmal durchläuft. für jeden der 128 steps gibt es einen counter, der am ende anzeigt, dass in diesem bereich mehr licht gemssen wurde.
+Für den Versuch ist aber nur der erste Weg entscheidend, da der Sensor in diesem Bereich das Maximum schon einmal durchlaufen hat. Auf dem Weg zurück findet keine Messung statt. 
+Für jeden der 128 steps der ersten 90° des Hinwegs gibt es einen Counter, der am Ende des Rückwegs anzeigt, dass in diesem Bereich der Sensorwert von 620 überschritten wurde und somit dort ein Maximum liegt. 
 
-wenn steps= SPETSPER OUT REV/8 befindet sich der Motor wieder in der Ausgangsposition und die Geschwidnigkeit auf 0 gesetzt. Die grüne und die rote LED zeigen nun an ob der Versuch funktioniert hat. Leuchtet die gründe Led heißt das, dass in einem Bereich von 10% Abweichng nahc oben und nach unten für die korrekte Wellenlänge eine erhöhte Lichtintensität gemessen wurde. Leuchtet die rote LED, wurde in dem Bereich um dieses Intervall kein Ausschlag gemessen. Leuchten beide ist also sichergestellt, dass Licht in dem Bereich aufgenommen wurde und somit kein fehler in der Bewegung vorliegt und dass auch der ichtsensor richtig kalibriert ist und er nicht mit einer zu geringen oder zu hohen Sensibilität eingestellt wurde.
+Wenn steps= STEPSSPEROUTREV/8 befindet sich der Motor wieder in der Ausgangsposition und die Geschwidnigkeit des Motors wird auf 0 gesetzt. Die grüne und die rote LED zeigen nun an, ob der Versuch funktioniert hat. Leuchtet die rote LED heißt das, dass in einem Bereich von 10% Abweichung nach oben und nach unten für den korrekten counter bei der Wellenlänge eine erhöhte Lichtintensität gemessen wurde. Leuchtet die grüne LED, wurde im Bereich außerhalb dieses Intervalls keine erhöhte Intensität wahrgenommen. Leuchten beide ist also sichergestellt, dass Licht nur in dem Bereich aufgenommen wurde und somit kein Fehler in der Bewegung vorliegt und dass auch der Lichtsensor auf die richtige Sensibilität kalibriert ist.
 
 ```
 int ledrot = 12;
@@ -364,3 +336,27 @@ counter127 = 0;
 counter128 = 0;
 }
 ```
+
+
+
+
+
+## Beispielversuch<a name="4e"></a> 
+
+Im Folgenden wird ein Versuch und seine Auswertung beschrieben wie er mit unserem Spektrometer durchgeführt werden kann. 
+
+
+### Versuchsdurchführung<a name="4a"></a>
+
+Vor der eigentlichen Durchführung des Versuches müssen einige Vorbereitungen getroffen werden. Zum einen muss der Arduino an den Computer über das USB Typ-B-Kabel angeschlossen werden, um im Arduino Editor das Monitoring aufzurufen. Außerdem gilt es die Stromversorgung des Motors über eine Steckdose herzustellen. Zusätzlich dazu muss sichergestellt werden, dass der Dreharm sich wirklich auf der Ausgangsposition bei 0° befindet. Zuletzt gilt es die Box wieder "lichtdicht" zu verschließen. Sind all diese Faktoren gegeben kann der Versuch begonnen werden.
+Dafür wird lediglich der Schalter auf der Vorderseite umgelegt. Leuchtet nun die blaue Leuchte, läuft der Versuch. Er gilt als beendet und erfolgreich, wenn die rote und grüne LED leuchten. Im Monitor werden nun die Counter 59 & 60 angegeben als Ausschläge. 
+
+// Bild/Video Versuch Schalter und LED 
+
+
+### Versuchsnachbereitung / Resultat<a name="4c"></a>
+
+Zur Auswertung der Counter wird zunächst der Durchschnitt der ausgeschlagenen Counter berechnet. Dieser beträgt bei unserem Versuch mit dem Laser 59,5. Dieser Wert wird in eine vorbereitete Excel-Tabelle eingetragen, die automatisch den Winkel des Ausschlags und daraus die Wellenlänge des Lasers berechnet. Zusätzlich dazu wird außerdem die Abweichung vom Literaturwert der Wellenlänge des Lasers berechnet. Bei einem Durchschnitt vom 59,5 beträgt der Winkel 41,13° und somit die Wellenlänge &lambda; = 657,8nm. Damit hat unser Wert eine Abweichung von 1,2% vom Literaturwert &lamba; = 650nm. 
+
+// Bild ExcelTabelle und Monitor
+

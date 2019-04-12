@@ -50,11 +50,11 @@ Schuljahr 2018/19
 
 Bei einem optischen Spektrometer handelt es sich um ein Gerät zum Ausmessen eines optischen Spektrums. Ein Lichtmodell ist das Wellenmodell. In diesem Modell bewegt sich Licht als elektromagnetische Welle durch den Raum. Dabei hat jede Wellenlänge &lamda; eine spezifische Farbwirkung. Ein optisches Spektrum beschreibt die Wellenlängen eines Lichtes. Um diese zu bestimmen, wird das Licht durch ein Gitter geleitet. An diesem Gitter bilden sich nach dem Huygenschen Prinzip neue Elementarwellen, die sich kreisförmig ausbreiten: Das Licht wird gebeugt.
 
-///bild huygensches Prinzip
+<p align="center"><img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Hygen.JPG" alt="image" width="600"></p>
  
 Durch die verschiedenen Richtungen der Wellen interferieren sie miteinander. Dabei werden die Auslenkungen der Wellen an jedem Punkt addiert. Entscheidend für die finale Auslenkung ist der Phasenunterschied der Wellen, der wiederum vom Gangunterschied vorgegeben wird. Wenn der Gangunterschied eine ganze Wellenlängenanzahl beträgt, trifft immer ein Berg auf einen Berg und ein Tal auf ein Tal, und es gibt somit die maximale Auslenkung. Es herrscht konstruktive Interferenz. 
 
- // skizze bild
+<p align="center"><img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Gangunterschied.JPG" alt="image" width="600"></p>
 
 Wie in der Skizze zu sehen ist, beträgt der Gangunterschied immer: g * sin(α)
 Da für konstruktive Interferenzen der Gangunterschied eine ganze Anzahl an Wellenlängen betragen muss, gilt also n * &lamda; = g * sin(α). Dementsprechend gibt es für eine Wellenlänge nur bestimmte Winkel, in denen konstruktive Interferenz herrscht. In den restlichen Winkeln löschen sich die Wellen destruktiv aus.
@@ -365,14 +365,14 @@ Vor der eigentlichen Durchführung des Versuches werden einige Vorbereitungen ge
 
 Dafür wird lediglich der Schalter auf der Vorderseite umgelegt. Die blaue Leuchte beginnt zu leuchten. Am Ende des Versuchs zeigen die rote und grüne LED den erfolgreichen Abschluss des Versuchs an. Im Monitor werden nun die Counter 59 & 60 als Ausschläge ausgewiesen. 
 
-// Bild/Video Versuch Schalter und LED 
+<p align="center"><a href="https://www.youtube.com/watch?v=5DC7kokQGrc"><img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Aufbau%201.JPG" width="400px"><br>Link zu dem Versuchsvideo</a></p>
 
 
 ### Versuchsnachbereitung / Resultat<a name="4c"></a>
 
 Zur Auswertung der Counter wird zunächst der Durchschnitt der ausgeschlagenen Counter berechnet. Dieser beträgt bei unserem Versuch mit dem Laser 59,5. Dieser Wert wird in eine vorbereitete Excel-Tabelle eingetragen, die automatisch den Winkel des Ausschlags und daraus die Wellenlänge des Lasers berechnet. Zusätzlich dazu wird die Abweichung vom Literaturwert der Wellenlänge des Lasers berechnet. Bei einem Durchschnitt vom 59,5 beträgt der Winkel 41,13° und somit die Wellenlänge &lambda; = 657,8nm. Damit hat unser Wert eine Abweichung von 1,2% vom Literaturwert &lamba; = 650nm. 
 
-// Bild ExcelTabelle und Monitor
+<img src="https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Monitor.PNG" alt="image" width="420"><img src=" https://github.com/BohrisNaturalisRettner/Projektseite-Spektrometer/blob/master/Excel.JPG" alt="image" width="420">
 
 # Das Fazit<a name="5"></a>
 
@@ -386,5 +386,21 @@ Wir mussten bei der Umsetzung feststellen, dass wir die Komplexität und den Auf
 Schlussendlich lässt sich sagen, dass dieses Projekt in vielfacher Hinsicht eine Bereicherung für uns war. Wir gehen mit einem durchweg positiven Gefühl aus dem Projekt und werden sicher an diesem Projekt noch ein wenig weiter tüfteln. 
 
 # Die Quellen<a name="6"></a>
+
+### Drone Bot Workshop (Stepper-Motor uvm.)
+https://www.youtube.com/channel/UCzml9bXoEM0itbcE96CB03w
+https://dronebotworkshop.com/
+
+### Informationen zu Photosensoren 
+https://learn.adafruit.com/photocells/using-a-photocell
+
+### Informationen zu Widerständen
+http://www.sengpielaudio.com/Farbcodewiderstaende09.htm
+
+### Bildquelle: Hygen'sches Prinzip
+http://www.schattenblick.de/infopool/natur/astronom/naber059.html
+
+### Bildquelle: Gangunterschied
+https://de.wikibooks.org/wiki/Physik_Oberstufe/_Schwingungen_und_Wellen/_Interferenzphänomene
 
 
